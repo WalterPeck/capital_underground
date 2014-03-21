@@ -1,7 +1,12 @@
 CapitalUnderground::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/score"
+  get "users/new"
+  
+  root "static_pages#home"
+  match '/signup', to: 'users#new',					 via: 'get'			
+  match '/help',   to: 'static_pages#help',  via: 'get'
+  match '/score',  to: 'static_pages#score', via: 'get'
+ 	
+ 	
  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

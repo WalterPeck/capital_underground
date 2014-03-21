@@ -8,4 +8,6 @@ class StaticPagesController < ApplicationController
 	def score
 	end
 
+	
+	
 end
