@@ -35,6 +35,16 @@ describe User do
 		it { should_not be_valid }
 	end
 
+	describe "when name is mixed case" do
+		let(:mixed_case_name) {"ClabVESSEls"}
+		
+		it "Should be saved as all lower-case" do
+			@user.name = mixed_case_name
+			@user.save
+			expect(@user.reload.name).to eq mixed_case_name.downcase
+		end
+	end
+	
 	describe "when movie is not present" do
 		before { @user.movie = " " }
 		it { should_not be_valid }
