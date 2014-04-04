@@ -4,7 +4,7 @@ describe User do
  
  	before do  
  		@user = User.new(name: "Example User", movie: "Example",
- 											password: "foobar", password_confirmation: "foobar") 
+ 											password: "foobar", password_confirmation: "foobar", dealer: "example") 
   end
   
 	subject { @user }
@@ -15,23 +15,23 @@ describe User do
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }
     it { should respond_to(:authenticate) }
-    
+    it { should respond_to(:dealer) }
     it { should be_valid }
   
   describe "when name is not present" do
-		before { @user.name = " " }
+		before { @user.dealer = " " }
 		it { should_not be_valid }
 	end
 	
 
 	
 	describe "when name is too long" do
-		before { @user.name = "a" * 51 } 
+		before { @user.dealer = "a" * 51 } 
 		it { should_not be_valid }
   end
 	
 	describe "when name is too short" do
-		before { @user.name = "a" * 2 }
+		before { @user.dealer = "a" * 2 }
 		it { should_not be_valid }
 	end
 
@@ -39,9 +39,9 @@ describe User do
 		let(:mixed_case_name) {"ClabVESSEls"}
 		
 		it "Should be saved as all lower-case" do
-			@user.name = mixed_case_name
+			@user.dealer = mixed_case_name
 			@user.save
-			expect(@user.reload.name).to eq mixed_case_name.downcase
+			expect(@user.reload.dealer).to eq mixed_case_name.downcase
 		end
 	end
 	
@@ -89,6 +89,7 @@ describe User do
 		it { should be_invalid }
 	end
 	
+	#changed something in here
 	describe "return value of authenticate method" do
 		before { @user.save } #THIS SAVES THE USER TO THE DATA BASE BEFORE TESTING
 		let(:found_user) { User.find_by(name: @user.name) }
