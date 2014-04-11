@@ -4,7 +4,7 @@ describe User do
  
  	before do  
  		@user = User.new(name: "Example User", movie: "Example",
- 											password: "foobar", password_confirmation: "foobar", dealer: "example") 
+ 											password: "foobar", password_confirmation: "foobar", dealer: "example", cash: 500, weed: 0) 
   end
   
 	subject { @user }
@@ -16,14 +16,27 @@ describe User do
     it { should respond_to(:password_confirmation) }
     it { should respond_to(:authenticate) }
     it { should respond_to(:dealer) }
+    it { should respond_to(:cash) }
+    it { should respond_to(:weed) }
     it { should be_valid }
+  
+  
+  describe "when cash is not present" do
+  	before { @user.cash = nil }
+  	it { should_not be_valid }
+  end  	
+  
+  describe "when weed is not present" do
+  	before { @user.weed = nil }
+		it { should_not be_valid }  
+  end
   
   describe "when name is not present" do
 		before { @user.dealer = " " }
 		it { should_not be_valid }
 	end
 	
-
+  
 	
 	describe "when name is too long" do
 		before { @user.dealer = "a" * 51 } 
@@ -39,9 +52,9 @@ describe User do
 		let(:mixed_case_name) {"ClabVESSEls"}
 		
 		it "Should be saved as all lower-case" do
-			@user.dealer = mixed_case_name
+			@user.name = mixed_case_name
 			@user.save
-			expect(@user.reload.dealer).to eq mixed_case_name.downcase
+			expect(@user.reload.name).to eq mixed_case_name.downcase
 		end
 	end
 	

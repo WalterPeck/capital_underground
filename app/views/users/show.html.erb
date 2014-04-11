@@ -1,3 +1,52 @@
 <% provide(:title, @user.name) %>
-<h1>Hey There <%= @user.name %>. <%= @user.movie %> was
+
+
+	<% weed = @user.albany%>
+	<% cash = @user.money(weed)%>
+	
+
+
+<h1>
+<%= @user.bling%>
+</h1>
+
+<h1>Hey There <%= @user.dealer %>. <%= @user.movie %> was
 a pretty good movie...I guess.</h1>
+<h2>
+	You have $<%= @user.cash %> go buy some fuggin drugs
+	<%=  params[:cash]%>
+</h2>
+
+<h2>
+	You have <%= @user.weed %> ounces of weed.  
+</h2>
+
+<h2><b>Cannabis:</b><i> <%= weed %> per ounce</i></h2>
+
+
+<!-- This already uses the method patch because of Record Identification -->
+<%= form_for(@user, method: "patch") do |f| %>
+	<%= f.label :weed, 'Cannabis' %>
+	<%= f.select(:weed, [["1 ounce $#{weed}", 1], ["2 ounces $#{weed * 2}", 2],["3 ounces $#{(weed * 2.5).to_i}", 3]]) %>
+	<%= f.hidden_field :cash, :value => @user.bling %>
+	
+	<%= f.submit "Buy",  :name => "buy", class: "btn btn-success" %>
+	<%= f.submit "Sell", :name => "sell",   class: "btn btn-danger" %>
+   
+<% end %>
+
+
+<!-- apparently using remote : true as a attribute in the form for will prevent
+#from reloaing the page
+
+RIGHT NOW THE cash is all fucked cause i need to find a way for it to 
+Know how much to pass.
+
+f.hidden_field :cash, :value => @user.cash - cash 
+
+
+
+
+-->
+
+

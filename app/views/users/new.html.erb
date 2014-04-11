@@ -16,6 +16,9 @@
 			
 			<%= f.label :password_confirmation, "Confirmation" %>
 			<%= f.password_field :password_confirmation %>
+			<%= f.hidden_field :weed, :value => 0 %>
+			<%= f.hidden_field :cash, :value => 500 %>
+		<!--	<%= f.hidden_field :name, :value => "test" %> -->
 			
 			<!--<%= f.hidden_field(:dealer, :value => params[:name])%>-->
 			<!--<input id="user_dealer" name="user[dealer]" type="post" value="user[name]" />-->
@@ -24,3 +27,4 @@
 	</div>
 </div>
 
+<!-- 4/6 trying to get a hidden field to pass -->
