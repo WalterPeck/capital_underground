@@ -4,7 +4,7 @@ describe User do
  
  	before do  
  		@user = User.new(name: "Example User", movie: "Example",
- 											password: "foobar", password_confirmation: "foobar", dealer: "example", cash: 500, weed: 0) 
+ 											password: "foobar", password_confirmation: "foobar", dealer: "example", cash: 500, weed: 0, molly: 0, shrooms: 0) 
   end
   
 	subject { @user }
@@ -14,18 +14,40 @@ describe User do
     it { should respond_to(:password_digest) }
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }
+    it { should respond_to(:remember_token) }
     it { should respond_to(:authenticate) }
     it { should respond_to(:dealer) }
     it { should respond_to(:cash) }
     it { should respond_to(:weed) }
+    it { should respond_to(:molly) }
+    it { should respond_to(:shrooms) }
+    
     it { should be_valid }
   
+  
+  
+  #see if you can do this same type of test for the drug attributes. This 
+  # is the correct way to check if the attribute is blank on user creation
+  describe "remember token" do
+  	before { @user.save }
+  	its(:remember_token) { should_not be_blank }
+  end
   
   describe "when cash is not present" do
   	before { @user.cash = nil }
   	it { should_not be_valid }
   end  	
   
+  describe "when mushrooms are not present" do
+  	before { @user.shrooms = nil }
+  	it { should_not be_valid }
+  end
+  
+  describe "when molly is not present" do
+  	before { @user.molly = nil }
+  	it { should_not be_valid }
+  end 
+   
   describe "when weed is not present" do
   	before { @user.weed = nil }
 		it { should_not be_valid }  

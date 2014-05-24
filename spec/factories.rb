@@ -7,5 +7,7 @@ FactoryGirl.define do
 		dealer 								"clabvessels"
 		cash 	500
 		weed	0
+	  molly 0
+		shrooms 0
 	end
 end

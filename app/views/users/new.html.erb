@@ -11,18 +11,24 @@
 			<%= f.label :movie, 'Favorite Movie' %>
 			<%= f.text_field :movie %>
 			
-			<%= f.label :password %>
+			<%= f.label :password, 'Password (minimum 6 characters)' %>
 			<%= f.password_field :password %>
 			
 			<%= f.label :password_confirmation, "Confirmation" %>
 			<%= f.password_field :password_confirmation %>
-			<%= f.hidden_field :weed, :value => 0 %>
-			<%= f.hidden_field :cash, :value => 500 %>
+		
+		
+		<!-- Might need to move these to the controller so people can't see in in
+		     The source code of the webpage-->
+		  <%= f.hidden_field :cash,    :value => 500 %>
+			<%= f.hidden_field :weed,    :value => 0 %>
+			<%= f.hidden_field :molly,   :value => 0 %>
+			<%= f.hidden_field :shrooms, :value => 0 %>
 		<!--	<%= f.hidden_field :name, :value => "test" %> -->
 			
 			<!--<%= f.hidden_field(:dealer, :value => params[:name])%>-->
 			<!--<input id="user_dealer" name="user[dealer]" type="post" value="user[name]" />-->
-			<%= f.submit "Create my Dealer", class: "btn btn-large btn-primary" %>
+			<%= f.submit "Create my Dealer", class: "btn btn-large btn-primary " %>
 		<% end %>
 	</div>
 </div>

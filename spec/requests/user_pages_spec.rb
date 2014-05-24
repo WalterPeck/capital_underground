@@ -10,6 +10,7 @@ describe "User pages" do
 		
 		it { should have_content(user.name) }
 		it { should have_title(user.name) }
+	  
 	end
 	
 	describe "sign up page" do #In the book this is "signup page"
@@ -43,6 +44,15 @@ describe "User pages" do
  	 
  	 it "should create a user" do
  	 	expect { click_button submit }.to change(User, :count).by(1)
+   end
+   
+   describe "after saving the user" do
+   	before { click_button submit }
+		let(:user) { User.find_by(name: "example user") }  
+  
+  	it { should have_link('Sign out') }
+  	it { should have_title(user.dealer) }
+  	it { should have_selector('div.alert.alert-success', text: 'Welcome') }
    end
   end
  end

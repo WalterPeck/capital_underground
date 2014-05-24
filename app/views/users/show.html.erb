@@ -1,40 +1,80 @@
-<% provide(:title, @user.name) %>
 
+<% provide(:title, @user.dealer) %>
 
-	<% weed = @user.albany%>
-	<% cash = @user.money(weed)%>
-	
+<!-- There is alot of repeated cash process's see if you really need all of them -->
 
+<div class="row">
 
-<h1>
-<%= @user.bling%>
-</h1>
+	<div class='center span12'>
 
-<h1>Hey There <%= @user.dealer %>. <%= @user.movie %> was
-a pretty good movie...I guess.</h1>
-<h2>
-	You have $<%= @user.cash %> go buy some fuggin drugs
-	<%=  params[:cash]%>
-</h2>
+		
+		
+<!--         This is just the  prices of drugs we set to variables
+	################################################################################	-->
+		<% weed = @user.albany('weed')%>
+		<!--<% cash = @user.money(weed)%>   I dont think i need this anymore-->  
+		<% molly_price = @user.albany('molly')%>
+		<% shrooms = @user.albany('shrooms') %>
+<!-- ############################################################################### -->
 
-<h2>
-	You have <%= @user.weed %> ounces of weed.  
-</h2>
+		<h1>
+			<%= @user.bling%>
+			<%= molly_price %>
+			<%= shrooms%>
+		</h1>
 
-<h2><b>Cannabis:</b><i> <%= weed %> per ounce</i></h2>
+		<lead>Hey There <%= @user.dealer %>. <%= @user.movie %> was
+			a pretty good movie...I guess.</lead>
 
+		<h2>
+			You have $<%= @user.cash %> go buy some fuggin drugs
+			<!--	<%=  params[:cash]%> I dont think i need this-->
+		</h2>
+
+		<h2>
+			You have <%= @user.weed %> ounces of weed.  
+		</h2>
+		
+		<p>You have <%= @user.shrooms%> ounces of shrooms.</p>
+
+		<h2><b>Cannabis:</b><i> <%= weed %> per ounce</i></h2>
+	</div>
 
 <!-- This already uses the method patch because of Record Identification -->
-<%= form_for(@user, method: "patch") do |f| %>
-	<%= f.label :weed, 'Cannabis' %>
-	<%= f.select(:weed, [["1 ounce $#{weed}", 1], ["2 ounces $#{weed * 2}", 2],["3 ounces $#{(weed * 2.5).to_i}", 3]]) %>
-	<%= f.hidden_field :cash, :value => @user.bling %>
-	
-	<%= f.submit "Buy",  :name => "buy", class: "btn btn-success" %>
-	<%= f.submit "Sell", :name => "sell",   class: "btn btn-danger" %>
-   
-<% end %>
 
+	<div class="span3">
+		<%= form_for @user do |f| %>
+		<%= f.label :weed, 'Cannabis' %>
+		<%= f.select(:weed, [["1 ounce $#{weed}", 1], ["2 ounces $#{weed * 2}", 2],["3 ounces $#{(weed * 2.5).to_i}", 3]]) %>
+		<%= f.hidden_field :cash, :value => weed %>
+	
+		<%= f.submit "Buy",  :name => "buy_weed", class: "btn btn-success" %>
+		<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger" %>
+   
+		<% end %>
+
+		<!-- namespace is to make the html 'id' value different from the first form -->
+		<%= form_for @user  do |f| %>
+		<%= f.label :shrooms, 'Mushrooms' %>
+ 		<%= f.select(:shrooms, [["1 ounce $#{shrooms}", 1], ["2 ounces $#{shrooms * 2}", 2],["3 ounces $#{(shrooms * 2.5).to_i}", 3]])%>
+ 		<%= f.hidden_field :cash, :value => shrooms%>		
+ 				
+ 		<%= f.submit "Buy",  :name => "buy_shrooms", class: "btn btn-success" %>
+ 		<%= f.submit "Sell", :name => "sell_shrooms", class: "btn btn-danger"%>
+	 	<% end %>
+	</div>	
+	<div class="span3">
+		<%= form_for @user do |f| %>
+		<%= f.label :molly, 'Molly' %>
+		<%= f.select(:molly, [["1 ounce $#{molly_price}", 1], ["2 ounces $#{molly_price * 2}", 2],["3 ounces $#{(molly_price * 2.5).to_i}", 3]]) %>
+		<%= f.hidden_field :cash, :value => molly_price%>
+
+	  <%= f.submit "Buy",  :name => "buy_molly", class: "btn btn-success" %>
+ 	  <%= f.submit "Sell", :name => "sell_molly", class: "btn btn-danger"%>
+		<% end %>
+	</div>
+
+</div>
 
 <!-- apparently using remote : true as a attribute in the form for will prevent
 #from reloaing the page
@@ -48,5 +88,4 @@ f.hidden_field :cash, :value => @user.cash - cash
 
 
 -->
-
 
