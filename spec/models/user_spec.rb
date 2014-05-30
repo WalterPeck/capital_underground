@@ -3,8 +3,7 @@ require 'spec_helper'
 describe User do
  
  	before do  
- 		@user = User.new(name: "Example User", movie: "Example",
- 											password: "foobar", password_confirmation: "foobar", dealer: "example", cash: 500, weed: 0, molly: 0, shrooms: 0) 
+ 		@user = User.new(name: "Example User", movie: "Example", password: "foobar", password_confirmation: "foobar", dealer: "example", cash: 500, weed: 0, molly: 0, cocaine: 0,  shrooms: 0, meth: 0, oxy: 0) 
   end
   
 	subject { @user }
@@ -21,16 +20,36 @@ describe User do
     it { should respond_to(:weed) }
     it { should respond_to(:molly) }
     it { should respond_to(:shrooms) }
+    it { should respond_to(:cocaine) }
+    it { should respond_to(:meth) }
+    it { should respond_to(:oxy) }
     
     it { should be_valid }
   
   
-  
   #see if you can do this same type of test for the drug attributes. This 
   # is the correct way to check if the attribute is blank on user creation
+  
+
   describe "remember token" do
   	before { @user.save }
   	its(:remember_token) { should_not be_blank }
+  end
+  
+  describe "when oxycontin is not present" do
+  	before { @user.oxy = nil }
+  	it { should_not be_valid }
+  end
+  
+  describe "when meth is not present" do
+  	before { @user.meth = nil }
+  	it { should_not be_valid }
+  end
+  
+  
+  describe "when cocaine is not present" do
+  	before { @user.cocaine = nil }
+  	it { should_not be_valid }
   end
   
   describe "when cash is not present" do

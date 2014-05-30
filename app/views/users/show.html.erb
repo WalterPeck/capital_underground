@@ -11,70 +11,196 @@
 		
 <!--         This is just the  prices of drugs we set to variables
 	################################################################################	-->
-		<% weed = @user.albany('weed')%>
-		<!--<% cash = @user.money(weed)%>   I dont think i need this anymore-->  
+		<% weed_price = @user.albany('weed')%>
+		
 		<% molly_price = @user.albany('molly')%>
-		<% shrooms = @user.albany('shrooms') %>
+		<% shroom_price = @user.albany('shrooms') %>
+		<% cocaine_price = @user.albany('cocaine')%>
+		<% meth_price = @user.albany('meth')%>
+		<% oxy_price = @user.albany('oxy') %>
 <!-- ############################################################################### -->
 
-		<h1>
-			<%= @user.bling%>
-			<%= molly_price %>
-			<%= shrooms%>
-		</h1>
+
 
 		<lead>Hey There <%= @user.dealer %>. <%= @user.movie %> was
 			a pretty good movie...I guess.</lead>
 
 		<h2>
 			You have $<%= @user.cash %> go buy some fuggin drugs
-			<!--	<%=  params[:cash]%> I dont think i need this-->
+		
 		</h2>
 
 		<h2>
 			You have <%= @user.weed %> ounces of weed.  
 		</h2>
 		
-		<p>You have <%= @user.shrooms%> ounces of shrooms.</p>
-
-		<h2><b>Cannabis:</b><i> <%= weed %> per ounce</i></h2>
+		<p>You have <%= @user.cocaine%> ounces of cocaine.</p>
+    <p>You have <%= @user.meth%>    ounces of meth.</p>
+    <p>You have <%= @user.oxy%>     ounces of oxycontin.</p>
+    
+		<p><b>Cannabis:</b><i> 		 <%= weed_price %>   per ounce</i></p>
+		<p><b>Shrooms:</b><i>  		 <%= shroom_price %> per ounce</i></p>
+		<p><b>Molly:</b><i>    	 	 <%= molly_price %>  per ounce</i></p>
+		<p><b>Cocaine:</b><i>  		 <%= cocaine_price%> per ounce</i></p>	
+		<p><b>Meth:</b><i>		     <%= meth_price%>    per ounce</i></p>
+	  <p><b>Oxycontin:</b><i>		 <%= oxy_price%>     per ounce</i></p>
 	</div>
+</div>
+<!-- first row-->
 
-<!-- This already uses the method patch because of Record Identification -->
+<!-- ################################################################### 
+     ###################################################################-->
 
-	<div class="span3">
-		<%= form_for @user do |f| %>
-		<%= f.label :weed, 'Cannabis' %>
-		<%= f.select(:weed, [["1 ounce $#{weed}", 1], ["2 ounces $#{weed * 2}", 2],["3 ounces $#{(weed * 2.5).to_i}", 3]]) %>
-		<%= f.hidden_field :cash, :value => weed %>
-	
-		<%= f.submit "Buy",  :name => "buy_weed", class: "btn btn-success" %>
-		<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger" %>
-   
-		<% end %>
 
+<div class='row butt'>
+		
+		<div class="span5 background">
 		<!-- namespace is to make the html 'id' value different from the first form -->
-		<%= form_for @user  do |f| %>
-		<%= f.label :shrooms, 'Mushrooms' %>
- 		<%= f.select(:shrooms, [["1 ounce $#{shrooms}", 1], ["2 ounces $#{shrooms * 2}", 2],["3 ounces $#{(shrooms * 2.5).to_i}", 3]])%>
- 		<%= f.hidden_field :cash, :value => shrooms%>		
+		   
+		   <div class='activity_rounded'>
+		   	<%=image_tag("shrooms.jpg", width:'130', height: '130')%> 
+		   	</div>
+		
+		<div class='  forms pull-right  center'>
+		
+		<h4 class='drug_label'>
+	  	Mushrooms
+	  </h4>
+		
+		<%= form_for @user, html: {class: "drug_form"}  do |f| %>
+		<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]])%>
+ 		<%= f.hidden_field :cash, :value => shroom_price%>		
  				
  		<%= f.submit "Buy",  :name => "buy_shrooms", class: "btn btn-success" %>
  		<%= f.submit "Sell", :name => "sell_shrooms", class: "btn btn-danger"%>
 	 	<% end %>
-	</div>	
-	<div class="span3">
-		<%= form_for @user do |f| %>
-		<%= f.label :molly, 'Molly' %>
+		</div>
+	  </div>
+	
+	
+	
+	<div class=" span5 background">
+		
+		<div class='activity_rounded'>
+			<%=image_tag("weed.jpg", width:'130', height: '130')%> 
+		</div>
+		
+		<div class='  forms pull-right  center'>
+		
+			<h4 class='drug_label'>
+	  		Cannabis
+	  	</h4>
+		
+			<%= form_for @user, html: {class: "drug_form"} do |f| %>
+		
+			<%= f.select(:weed, [["1 ounce $#{weed_price}", 1], ["2 ounces $#{weed_price * 2}", 2],["3 ounces $#{(weed_price * 2.5).to_i}", 3]]) %>
+			<%= f.hidden_field :cash, :value => weed_price %>
+	
+			<%= f.submit "Buy",  :name => "buy_weed", class: "btn btn-success" %>
+			<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger" %>
+   
+			<% end %>
+		</div>
+  	</div>
+  
+<!-- ################################################################### 
+     ###################################################################-->
+
+
+	<div class="span5 background">
+		
+		<div class='activity_rounded'>
+			<%=image_tag("molly.jpg", width:'130', height: '130')%> 
+		</div>
+		
+		<div class='  forms pull-right  center'>
+		
+			<h4 class='drug_label'>
+	  		Molly
+	  	</h4>
+		<%= form_for @user, html: {class: "drug_form"} do |f| %>
+		
 		<%= f.select(:molly, [["1 ounce $#{molly_price}", 1], ["2 ounces $#{molly_price * 2}", 2],["3 ounces $#{(molly_price * 2.5).to_i}", 3]]) %>
 		<%= f.hidden_field :cash, :value => molly_price%>
 
 	  <%= f.submit "Buy",  :name => "buy_molly", class: "btn btn-success" %>
  	  <%= f.submit "Sell", :name => "sell_molly", class: "btn btn-danger"%>
 		<% end %>
-	</div>
+		</div>
+		</div>
+		
+	<div class=" span5 background">
+		
+		<div class='activity_rounded'>
+			<%=image_tag("cocaine.jpg", width:'130', height: '130')%> 
+		</div>
+		
+		<div class='  forms pull-right  center'>
+		
+			<h4 class='drug_label'>
+	  		Cocaine
+	  	</h4>	
+		
+	  <%= form_for @user, html: {class: "drug_form"} do |f| %>
+		
+		<%= f.select(:cocaine, [["1 ounce $#{cocaine_price}", 1], ["2 ounces $#{cocaine_price * 2}", 2], ["3 ounces $#{(cocaine_price * 2.5).to_i}", 3]]) %>
+		<%= f.hidden_field :cash, :value => cocaine_price %>
 
+		<%= f.submit "Buy",  :name => "buy_cocaine",  class: "btn btn-success" %>
+		<%= f.submit "Sell", :name => "sell_cocaine", class: "btn btn-danger"%>
+		<% end %>
+		</div>
+		</div>
+
+<!-- ################################################################### 
+     ###################################################################-->
+		
+	
+	<div class=" span5 background">
+		
+		<div class='activity_rounded'>
+			<%=image_tag("meth.jpg", width:'130', height: '130')%> 
+		</div>
+		
+		<div class='  forms pull-right  center'>
+		
+			<h4 class='drug_label'>
+	  		Crystal Meth
+	  	</h4>	
+		<%= form_for @user, html: {class: "drug_form"} do |f| %>
+		
+		<%= f.select(:meth, [["1 ounce $#{meth_price}", 1], ["2 ounces $#{meth_price * 2}", 2], ["3 ounces $#{(meth_price * 2.5).to_i}", 3]]) %>
+		<%= f.hidden_field :cash, :value => meth_price %>
+		
+		<%= f.submit "Buy",  :name => "buy_meth",  class: "btn btn-success" %>
+		<%= f.submit "Sell", :name => "sell_meth", class: "btn btn-danger" %>
+		<% end %>
+		</div>
+		</div>
+
+ 	<div class=" span5 background">
+		
+		<div class='activity_rounded'>
+			<%=image_tag("oxy.jpg", width:'130', height: '130')%> 
+		</div>
+		
+		<div class='  forms pull-right center'>
+		
+			<h4 class='drug_label'>
+	  		Oxycontin
+	  	</h4>	
+		<%= form_for @user, html: {class: "drug_form"} do |f| %>
+		
+		<%= f.select(:oxy, [["50 pills $#{oxy_price}", 1], ["100 pills $#{oxy_price * 2}", 2], ["150 pills $#{(oxy_price * 2.5).to_i}", 3]]) %>
+		<%= f.hidden_field :cash, :value => oxy_price %>
+		
+		<%= f.submit "Buy",  :name => "buy_oxy",  class: "btn btn-success" %>
+		<%= f.submit "Sell", :name => "sell_oxy", class: "btn btn-danger" %>
+		<% end %>
+		</div>
+		</div>	
 </div>
+
 
 <!-- apparently using remote : true as a attribute in the form for will prevent
 #from reloaing the page

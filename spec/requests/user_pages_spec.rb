@@ -33,7 +33,12 @@ describe "User pages" do
  		end
  	end
  	
- 	describe "with valid information" do
+ 
+
+ 
+ 
+ 
+  describe "with valid information" do
  	 before do
  	 	fill_in "User/Dealer Name",  			  with: "Example User"
  	 	fill_in "Movie",        with: "Example Movie"
@@ -42,18 +47,20 @@ describe "User pages" do
  	 	
  	 end
  	 
+ 	 
+ 	 
  	 it "should create a user" do
  	 	expect { click_button submit }.to change(User, :count).by(1)
    end
    
+  
    describe "after saving the user" do
    	before { click_button submit }
 		let(:user) { User.find_by(name: "example user") }  
-  
-  	it { should have_link('Sign out') }
-  	it { should have_title(user.dealer) }
-  	it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-   end
+    it { should have_link('Sign out') }
+    it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+     
+  end
   end
  end
 end

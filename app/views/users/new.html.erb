@@ -24,9 +24,11 @@
 			<%= f.hidden_field :weed,    :value => 0 %>
 			<%= f.hidden_field :molly,   :value => 0 %>
 			<%= f.hidden_field :shrooms, :value => 0 %>
-		<!--	<%= f.hidden_field :name, :value => "test" %> -->
+			<%= f.hidden_field :cocaine, :value => 0 %>
+	    <%= f.hidden_field :meth, 	 :value => 0 %> 
+	  	<%= f.hidden_field :oxy,		 :value => 0 %>
 			
-			<!--<%= f.hidden_field(:dealer, :value => params[:name])%>-->
+	
 			<!--<input id="user_dealer" name="user[dealer]" type="post" value="user[name]" />-->
 			<%= f.submit "Create my Dealer", class: "btn btn-large btn-primary " %>
 		<% end %>

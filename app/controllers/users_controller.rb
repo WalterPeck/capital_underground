@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+	class UsersController < ApplicationController
   def new
   	@user = User.new #this defined the @user instance variable so we can
   end								 #Get the signup page validation tests to pass
@@ -52,7 +52,31 @@ class UsersController < ApplicationController
 		show
 		molly_sell
   	cash_sell('molly')
-  else
+  elsif params[:buy_cocaine]
+  	show
+  	cocaine_buy
+  	cash_buy('cocaine')
+  elsif params[:sell_cocaine]
+  	show
+  	cocaine_sell
+  	cash_sell('cocaine')
+  elsif params[:buy_meth]
+  	show
+  	meth_buy
+  	cash_buy('meth')
+  elsif params[:sell_meth]
+		show
+		meth_sell
+		cash_sell('meth')
+  elsif params['buy_oxy']
+  	show
+  	oxy_buy
+  	cash_buy('oxy')
+  elsif params['sell_oxy']
+  	show
+  	oxy_sell
+  	cash_sell('oxy')
+  else	
   	nil
   end
  	
@@ -84,7 +108,8 @@ class UsersController < ApplicationController
        
       
      params.require(:user).permit(:name, :movie, :password,
-                                   :password_confirmation, :dealer, :cash, :weed, :molly, :shrooms)
+                                   :password_confirmation, :dealer, :cash, :weed, 
+                                   :molly, :shrooms, :cocaine, :meth, :oxy)
     end
 		
 ######################################################################	
@@ -101,6 +126,7 @@ class UsersController < ApplicationController
 		def p_cash(drug)
 	    
 	    if 		drug == 'weed'
+		  			
 		  			drug = (params[:user][:weed]).to_i
 						cash = (params[:user][:cash]).to_i
 	    
@@ -114,6 +140,20 @@ class UsersController < ApplicationController
 	    			drug = (params[:user][:molly].to_i)
 	    			cash = (params[:user][:cash].to_i)
 	    
+	    elsif drug == 'cocaine'
+	    	
+	    		  drug = (params[:user][:cocaine].to_i)
+	    			cash = (params[:user][:cash].to_i)
+	    			
+	    elsif drug == 'meth'
+	    		
+	    			drug = (params[:user][:meth].to_i)
+	    			cash = (params[:user][:cash].to_i)
+	    		
+	    elsif drug == 'oxy'
+	    			
+	    			drug = (params[:user][:oxy].to_i)
+	    			cash = (params[:user][:cash].to_i)
 	    else nil
 	    end
 	    
@@ -136,13 +176,24 @@ class UsersController < ApplicationController
   end
   
   def p_shrooms
-  	(params[:user][:shrooms].to_i)
+  	(params[:user][:shrooms]).to_i
   end
 
 	def p_molly
 		(params[:user][:molly]).to_i
 	end
-
+	
+	def p_cocaine
+		(params[:user][:cocaine]).to_i
+	end
+	
+	def p_meth
+		(params[:user][:meth]).to_i
+	end
+	
+	def p_oxy 
+		(params[:user][:oxy]).to_i
+	end
 ####################################################################	
 	
 	def weed_buy
@@ -157,6 +208,18 @@ class UsersController < ApplicationController
 		@user.update_attribute(:molly, @user.molly + p_molly)
 	end 
    
+  def cocaine_buy
+		@user.update_attribute(:cocaine, @user.cocaine + p_cocaine)
+	end
+  
+  def meth_buy
+  	@user.update_attribute(:meth, @user.meth + p_meth)
+  end
+  
+  def oxy_buy
+  	@user.update_attribute(:oxy, @user.oxy + p_oxy)
+  end
+  
   def weed_sell
   	@user.update_attribute(:weed, @user.weed - p_weed)
 	end
@@ -167,6 +230,18 @@ class UsersController < ApplicationController
 	
 	def molly_sell
 		@user.update_attribute(:molly, @user.molly - p_molly)
+	end
+	
+	def cocaine_sell
+		@user.update_attribute(:cocaine, @user.cocaine - p_cocaine)
+  end
+  
+  def meth_sell
+  	@user.update_attribute(:meth, @user.meth - p_meth)
+  end
+	
+	def oxy_sell
+		@user.update_attribute(:oxy, @user.oxy - p_oxy)
 	end
 ####################################################################
 	

@@ -37,7 +37,7 @@ describe "Authentication" do
 			 #test model using FactoryGirl
 			 let(:user)  { FactoryGirl.create(:user) }
 			 before do
-				 fill_in "Dealer Name", with: user.name#upcase the test here to make sure that our ability to find the user in the data base is case-insensitive
+				 fill_in "Dealer Name", with: user.name.upcase#upcase the test here to make sure that our ability to find the user in the data base is case-insensitive
 				 fill_in "Password", 	 with: user.password
 				 click_button "Sign in"
 			end
@@ -50,6 +50,7 @@ describe "Authentication" do
 			it { should have_link('Profile',     href: user_path(user))  }
 			it { should have_link('Sign out',    href: signout_path) }
 			it { should_not have_link('Sign in', href: signin_path) }
+			it { should have_content("HEYYY")}
 		end
 	end
 end

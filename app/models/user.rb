@@ -21,7 +21,9 @@ class User < ActiveRecord::Base
 	validates :weed,    numericality:  	{ only_integer: true }
   validates :molly,   numericality: 	{ only_integer: true }
 	validates :shrooms, numericality:   { only_integer: true }
-	
+	validates :cocaine, numericality:   { only_integer: true }
+  validates :meth,    numericality:   { only_integer: true }
+	validates :oxy, 		numericality:  	{ only_integer: true }
  # :dealer => :name.id2name
   
   
@@ -65,6 +67,13 @@ class User < ActiveRecord::Base
 	  elsif drug == 'shrooms'
 			@shrooms = (200..300).to_a.sample
 			@shrooms
+		elsif drug == 'cocaine'
+			@cocaine = (1000..1500).to_a.sample
+			@cocaine
+		elsif drug == 'meth'
+			@meth = (550..2000).to_a.sample
+		elsif drug == 'oxy'
+			@oxy = (1500..3000).to_a.sample
 		else
 			nil
 		end
