@@ -8,4 +8,16 @@ module ApplicationHelper
 			"#{base_title} | #{page_title}"
 		end
 	end
+
+
+	def travel
+		if current_user.switch == 'troy'
+			'<li> HEY </li>'
+		end
+	end
 end
+
+
+
+      
+  

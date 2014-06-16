@@ -4,6 +4,5 @@ module UsersHelper
   	@weed = (a..b).to_a.sample
   end
 
-  
 
 end

@@ -4,9 +4,11 @@ CapitalUnderground::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   
   root "static_pages#home"
+  match 'users/:id/troy',		to: 'users#troy',					 via: 'get'
   match '/signup',  to: 'users#new',					 via: 'get'			
   match '/signin',  to: 'sessions#new', 			 via: 'get'
   match '/signout', to: 'sessions#destroy',		 via: 'delete'
+  match '/schen',   to: 'static_pages#schen',	 via: 'get'
   match '/help',    to: 'static_pages#help',   via: 'get'
   match '/score',   to: 'static_pages#score',  via: 'get'
  	

@@ -6,11 +6,15 @@ FactoryGirl.define do
 		password_confirmation "foobar"
 		dealer 								"clabvessels"
 		cash 	  500
-		weed	  0
-	  molly   0
-		shrooms 0
-		cocaine 0
-		meth    0
-		oxy     0
+		weed	  1
+	  molly   1
+		shrooms 1
+		cocaine 1
+		meth    1
+		oxy     1
 	end
+  
+ 
+
+
 end

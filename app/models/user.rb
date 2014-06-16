@@ -3,10 +3,15 @@ class User < ActiveRecord::Base
 	# IT WAS A LINE OF CODE TO MAKE SURE that THE *EMAIL*(NON-DUPLICATED) ENTERED
 	# THE DATABASE AS LOWERCASE 
   
-  def instance
-  	@grass
-  	@check
-  end
+##############################
+	@@switch = false
+	@@weed = 0
+	@@shrooms = 0
+	@@molly= 0
+	@@cocaine = 0
+	@@meth = 0
+	@@oxy = 0
+############################
   
   has_secure_password
 	
@@ -40,15 +45,61 @@ class User < ActiveRecord::Base
   	Digest::SHA1.hexdigest(token.to_s)
   end
   
+########################################################################   
+########################################################################   
+############ YOU ARE HERE NIGGER GUY ######################  
+   
   
-  #this is all a mess down here.  You need to figure out what the fuck you
-  #are doing nigga
-  def hello	
-  	
-  	puts("hello") 
- 	
- end
+
   
+
+  
+  
+  def switchen(x) # TEST TO SEE IF THE CONTROLLER CAN CHANGE VARIABLES IN HERE AND THEY REMAIN CONSTANT
+  	@@switch = x	
+  end
+  
+  
+  
+  
+  def switch
+  	@@switch
+  end
+
+
+########################################################################
+###########################||--DRUGS--||##############################
+########################################################################
+
+	def weed_price
+		@@weed
+	end
+
+	def shroom_price
+		@@shrooms
+	end
+	
+	def molly_price
+		@@molly
+	end
+	
+	def cocaine_price
+		@@cocaine
+	end
+	
+	def	meth_price
+		@@meth
+	end
+
+	def oxy_price
+		@@oxy
+	end
+
+
+
+
+########################################################################
+########################################################################
   def grass
 		@weed
 	end
@@ -59,13 +110,13 @@ class User < ActiveRecord::Base
 	
 	def albany(drug)
 		if drug == "weed"
-			@weed = (230..300).to_a.sample
-		  @weed
+			@@weed = (230..300).to_a.sample
+		  @@weed
 	  elsif drug == 'molly'
 			@molly = (600..800).to_a.sample
 			@molly
 	  elsif drug == 'shrooms'
-			@shrooms = (200..300).to_a.sample
+			@shrooms = (150..300).to_a.sample
 			@shrooms
 		elsif drug == 'cocaine'
 			@cocaine = (1000..1500).to_a.sample
@@ -79,9 +130,38 @@ class User < ActiveRecord::Base
 		end
 	end
 	
+	
+	
+	
+	#this is a more simpilized version of the method above.  This should clean
+	#it up alot and make the app faster. As well as preventing drug prices
+	#refreshing everytime the user refeshes his page.
+	def albz
+		
+		@@weed = (230..300).to_a.sample #weed is always a good deal in albany
+		@@molly = (600..800).to_a.sample
+		@@shrooms = (150..300).to_a.sample
+		@@cocaine = (1000..1500).to_a.sample
+		@@meth = (550..2000).to_a.sample
+		@@oxy = (1500..3000).to_a.sample
+  
+  end
+  
+  def troy
+
+  	@@weed = (230..380).to_a.sample #raised the high range to 380 because of rpi students
+		@@molly = (300..600).to_a.sample #lower molly because troy...more scumbags than party students
+		@@shrooms = (150..300).to_a.sample
+		@@cocaine = (800..1500).to_a.sample #bigger range on coke
+		@@meth = (550..1000).to_a.sample # meth high range is much lower....more meth heads
+		@@oxy = (1200..2500).to_a.sample # tweaked the oxy range cuz i dunno  	
+  end
+	
 	def money(drug)
 		@cash = drug
 	end
+	
+	
 
 
 
@@ -92,10 +172,7 @@ class User < ActiveRecord::Base
 		@check
 	end
 	
-	def alb_check
-		@check = "albany"
-		@check
-	end
+
 	
 	private
 		

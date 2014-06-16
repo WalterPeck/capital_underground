@@ -20,7 +20,14 @@ module SessionsHelper
 		@current_user ||= User.find_by(remember_token: remember_token)
 	end
 
-
+  def sign_out
+  	current_user.update_attribute(:remember_token, 
+  																	User.hash(User.new_remember_token))
+		cookies.delete(:remember_token)
+		self.current_user = nil
+  end
 	
+	#for some reason I am using User.hash instead of User.digest like the book
+	# is doing
 	
 end

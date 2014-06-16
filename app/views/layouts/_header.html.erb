@@ -5,9 +5,44 @@
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home",    root_path %></li>
-          <li><%= link_to "Help",    help_path %></li>
+          <li ><%= link_to "Help",    help_path %></li>
           <% if signed_in? %>
-          	<li><%= link_to "Travel", '#' %></li>
+          	<!--<li><%= link_to "Travel", '#' %></li>-->
+          	<li id="fat-menu" class="dropdown">
+          		<a href='#'class="dropdown-toggle" data-toggle="dropdown">
+          			Travel <b class="caret"></b>
+          		</a>
+          		<ul class="dropdown-menu">
+          			<% if current_user.switch == 'albany'%>
+          				<li><%= link_to "Troy", "#{current_user.id}/troy" %></li>
+          			<% elsif current_user.switch == 'troy'%>	
+          				<li><%= link_to "Albany", current_user %></li>
+          			<%end%>
+          			
+          		</ul>
+							</li>	
+          	
+ 							
+ 							<li id="fat-menu" class="dropdown">
+          		<a href='#'class="dropdown-toggle" data-toggle="dropdown">
+          			Inventory <b class="caret"></b>
+          		</a>
+          		<ul class="dropdown-menu">
+          			<li>    Cannabis:   <%= current_user.weed %> ounces</li>
+          			<li>    Mushrooms:   <%= current_user.shrooms %> ounces</li>
+          			<li>    Molly:   <%= current_user.molly %> ounces</li>
+          			<li>    Cocaine:   <%= current_user.cocaine %> ounces</li>
+          			<li>    Crystal Meth:   <%= current_user.meth %> ounces</li>
+          			<li>    Oxycontin:   <%= current_user.oxy %> ounces</li>
+          			<li><%= link_to "Settings", '#' %></li>
+          		
+          		</ul>
+						</li>	
+ 							
+ 							
+ 							
+ 							
+          	
           	<li id="fat-menu" class="dropdown">
           		<a href='#'class="dropdown-toggle" data-toggle="dropdown">
           			Account <b class="caret"></b>
