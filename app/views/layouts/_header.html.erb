@@ -14,9 +14,12 @@
           		</a>
           		<ul class="dropdown-menu">
           			<% if current_user.switch == 'albany'%>
-          				<li><%= link_to "Troy", "#{current_user.id}/troy" %></li>
+          				<li><%= link_to "Troy", troy_users_path(current_user) %></li>
+          			<% elsif current_user.switch == 'profile'%>	
+          				<li><%= link_to "Troy", troy_users_path(current_user) %></li>
+          				<li><%= link_to "Albany",  albany_users_path(current_user) %></li>
           			<% elsif current_user.switch == 'troy'%>	
-          				<li><%= link_to "Albany", current_user %></li>
+          				<li><%= link_to "Albany",  albany_users_path(current_user) %></li>
           			<%end%>
           			
           		</ul>

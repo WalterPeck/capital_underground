@@ -4,7 +4,7 @@ FactoryGirl.define do
 		movie		 							"Pulp Fiction"
 		password 							"foobar"
 		password_confirmation "foobar"
-		dealer 								"clabvessels"
+		dealer 								"ClabVessels"
 		cash 	  500
 		weed	  1
 	  molly   1

@@ -8,7 +8,7 @@
 	
 	
 	def troy
-		@user = current_user #this is from the sessions helper, take a look
+		 current_user #this is from the sessions helper, take a look
    
      
     if @user.switch == nil  ##
@@ -35,23 +35,7 @@
 		
 	end
 	
-
-			
-	def show
-	
-		#The @@switches get reset everytime you add new script to these pages
-		#and save because rails does something in order to refresh server for
-		#you.  So it is not a switch problem it is just the application reseting
-		#itself which means reseting the objects/users attributes like @@switch 
-	
-		
-		
-	#	if @first_time == nil #this is always nil for now because everytime the page renderes is refreshed all of the instance variables in this controller which makes sense.  This is the controller for the page.  					
-	#	set_prices
-	#	else
-	#	nil
-	 # end
-		
+	def albany
 		current_user
     
     if @user.switch == nil  ##
@@ -74,6 +58,37 @@
 		
 		@first_time =  @user.switch
 		@user.switchen('albany') #THIS MEANS THAT I CAN CAUSE A VARIABLE CHANGE IN THE CLASS...HOPEFULLY AND REMAINS CONSTANT 
+    @second_time = @user.switch
+	
+	end
+	
+
+			
+	def show
+	
+		#The @@switches get reset everytime you add new script to these pages
+		#and save because rails does something in order to refresh server for
+		#you.  So it is not a switch problem it is just the application reseting
+		#itself which means reseting the objects/users attributes like @@switch 
+	
+		
+		
+	#	if @first_time == nil #this is always nil for now because everytime the page renderes is refreshed all of the instance variables in this controller which makes sense.  This is the controller for the page.  					
+	#	set_prices
+	#	else
+	#	nil
+	 # end
+		
+		current_user
+    
+  
+		
+
+			
+		
+		
+		@first_time =  @user.switch
+		@user.switchen('profile') #THIS MEANS THAT I CAN CAUSE A VARIABLE CHANGE IN THE CLASS...HOPEFULLY AND REMAINS CONSTANT 
     @second_time = @user.switch
 		
 
@@ -158,7 +173,7 @@
  
  if @user.switch == 'albany'
  	    flashin
-		 	redirect_to @user
+		 	redirect_to :back
  
   	elsif @user.switch == 'troy'
   	  flashin
@@ -193,7 +208,7 @@ end
       
      # names = params[:user][:dealer].to_s
       
-       name = (params[:user][:dealer]).inspect
+       name = (params[:user][:dealer]).downcase
        params[:user][:name] = name
        
       

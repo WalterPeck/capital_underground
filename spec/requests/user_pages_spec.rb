@@ -498,41 +498,64 @@ describe "User pages" do
 		end
 	end
 	
-	
-	
-	
-	describe "profile page" do
+  describe "signin page" do
+		before { visit signin_path }
 		
-				
-				before { visit user_path(user) }
-		    
-		it { should have_content(user.name) }
-		it { should have_title(user.name) }
-		it_should_behave_like "buying"
-		it_should_behave_like "selling"
+		it { should have_content('Sign in') }
+		it { should have_title('Sign in') }
 	end
+
+###################################### PAGES AND SIGNIN ####################################################
 	
-	describe "troy page" do	
+	describe "signin" do
 		
-			#before { visit user_path(user)}
+		before { visit signin_path }
 		
-		before { visit user_path(user) + '/troy'} #there is probably a cleaner way of doing this but.. it works
-		  	it { should have_content('troy') }
-		  	it { should have_title('Poop') }
-				it_should_behave_like "buying"
-			  it_should_behave_like "selling"
-	end	
+		describe " with valid information " do
+			 #this makes a testing variable in which user is the creation of a 
+			 #test model using FactoryGirl
+			
+			 before do
+				 fill_in "Dealer Name", with: user.name.upcase#upcase the test here to make sure that our ability to find the user in the data base is case-insensitive
+				 fill_in "Password", 	 with: user.password
+				 click_button "Sign in"
+	  	 end
 		
-	#	describe "select ounces" # THIS IS WORKING..BUTT INSTEAD OF TROY IT IS CLICKING THE ALBANY BUTTON..
-	#		before do
-	#			page.select '1 ounce', from: 'user_weed'
-		   
-	#	  page.find_button('Guy').click
-       
-	#		end
+	  
+			describe "profile page" do
+		
+				before { visit user_path(user) }
+		    	it { should have_content(user.dealer)  }
+					it { should have_title(user.dealer) }
+ 					it { should have_link('Troy')}
+ 					it { should have_link('Albany')}
+		 	end
+	
+	
+			describe "albany page" do
+				before { visit albany_users_path(user)}
+	  			it { should have_title(user.dealer)   }
+	  			it { should have_link('Troy')}
+	  			it_should_behave_like "buying"
+					it_should_behave_like "selling"
+				end
+	
+	    describe "troy page" do	
+		
+	  		before { visit troy_users_path(user)} #there is probably a cleaner way of doing this but.. it works
+			  	it { should have_content('troy') }
+		 	    it { should have_title(user.dealer) }
+			  	it { should have_link('Albany')}
+			   	it_should_behave_like "buying"
+					it_should_behave_like "selling"
+	 	  end
+		end
+	end
+		
+
 			
      
-			
+##########################################################################################			
 	
 	  
 	
@@ -589,6 +612,8 @@ describe "User pages" do
    	before { click_button submit }
 		let(:user) { User.find_by(name: "example user") }  
     it { should have_link('Sign out') }
+    it { should have_link('Troy') }
+    it { should have_link('Albany')}
     it { should have_selector('div.alert.alert-success', text: 'Welcome') }
     
     #describe "when buying ounces" do

@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   
   has_secure_password
 	
-	before_save  { name.downcase! }
+	before_save  { self.name.downcase! }
 	before_create :create_remember_token
 	
 	validates :name, presence: true
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   	SecureRandom.urlsafe_base64
   end
   
-  def User.hash(token)
+  def User.digest(token)
   	Digest::SHA1.hexdigest(token.to_s)
   end
   
@@ -179,7 +179,7 @@ class User < ActiveRecord::Base
 		#double indent methods after private so people can clearly see which 
 		# ones are private sennnn.
 		def create_remember_token
-			self.remember_token = User.hash(User.new_remember_token)
+			self.remember_token = User.digest(User.new_remember_token)
 		end
 		
 end

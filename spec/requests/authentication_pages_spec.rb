@@ -40,6 +40,7 @@ describe "Authentication" do
 				 fill_in "Dealer Name", with: user.name.upcase#upcase the test here to make sure that our ability to find the user in the data base is case-insensitive
 				 fill_in "Password", 	 with: user.password
 				 click_button "Sign in"
+				 
 			end
 			
 			#these two below show that the signin with testing factory girl data base

@@ -1,9 +1,6 @@
 <% provide(:title, @user.dealer) %>
 
-<h1>TROY</h1>
-
-<p><b>Your in troy <%=@user.dealer%></b><p>
-
+<!-- There is alot of repeated cash process's see if you really need all of them -->
 
 <div class="row">
 
@@ -52,6 +49,11 @@
 		
 	</div>
 </div>
+<!-- first row-->
+
+<!-- ################################################################### 
+     ###################################################################-->
+
 
 <div class='row butt'>
 		
@@ -78,9 +80,8 @@
 			<%= f.select(:weed, [["1 ounce $#{weed_price}", 1], ["2 ounces $#{weed_price * 2}", 2],["3 ounces $#{(weed_price * 2.5).to_i}", 3]]) %>
 			
 	
-			<%= f.submit "Buy",  :name => "buy_weed",    class: "btn btn-success", id:"buy_weed" %>
-			
-			<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger",  id:"sell_weed" %> 
+			<%= f.submit "Buy",  :name => "buy_weed",    class: "btn btn-success",   id:"buy_weed" %>
+			<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger",    id:"sell_weed" %>
    
 			<% end %>
 		</div>
@@ -146,13 +147,13 @@
 		<%= f.select(:molly, [["1 ounce $#{molly_price}", 1], ["2 ounces $#{molly_price * 2}", 2],["3 ounces $#{(molly_price * 2.5).to_i}", 3]]) %>
 	
 
-	  <%= f.submit "Buy",  :name => "buy_molly", class: "btn btn-success", id:"buy_molly" %>
- 	  <%= f.submit "Sell", :name => "sell_molly", class: "btn btn-danger", id:"sell_molly"%>
+	  <%= f.submit "Buy",  :name => "buy_molly",  class: "btn btn-success", id:"buy_molly" %>
+ 	  <%= f.submit "Sell", :name => "sell_molly", class: "btn btn-danger",  id:"sell_molly"%>
 		<% end %>
 		</div>
 		</div>
 		
-	<% if cocaine_price > 1100 %>
+	<% if cocaine_price > 1300 %>
 			
 			<div class=" span5 background_red">
 	<%else%>
@@ -175,7 +176,7 @@
 	
 
 		<%= f.submit "Buy",  :name => "buy_cocaine",  class: "btn btn-success", id:"buy_cocaine" %>
-		<%= f.submit "Sell", :name => "sell_cocaine", class: "btn btn-danger",  id:"sell_cocaine"%>
+		<%= f.submit "Sell", :name => "sell_cocaine", class: "btn btn-danger", id:"sell_cocaine"%>
 		<% end %>
 		</div>
 		</div>
@@ -183,7 +184,7 @@
 <!-- ################################################################### 
      ###################################################################-->
 		
-	<% if meth_price > 900 %>
+	<% if meth_price > 1500 %>
 			
 			<div class=" span5 background_red">
 	<%else%>
@@ -210,7 +211,7 @@
 		</div>
 		</div>
 
-<% if oxy_price > 1700 %>
+<% if oxy_price > 2500 %>
 			
 			<div class=" span5 background_red">
 	<%else%>
@@ -232,8 +233,19 @@
 		<%= f.hidden_field :cash, :value => oxy_price %>
 		
 		<%= f.submit "Buy",  :name => "buy_oxy",  class: "btn btn-success", id:"buy_oxy" %>
-		<%= f.submit "Sell", :name => "sell_oxy", class: "btn btn-danger",  id:"sell_oxy" %>
+		<%= f.submit "Sell", :name => "sell_oxy", class: "btn btn-danger", id:"sell_oxy" %>
 		<% end %>
 		</div>
 		</div>	
 </div>
+
+
+<!-- apparently using remote : true as a attribute in the form for will prevent
+#from reloaing the page
+
+f.hidden_field :cash, :value => @user.cash - cash 
+
+
+
+
+-->
