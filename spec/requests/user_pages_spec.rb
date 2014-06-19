@@ -363,7 +363,7 @@ describe "User pages" do
     		select '3 ounces', from: 'user_weed'
     	
     	
-    	  if (user.weed_price * 3) > user.cash
+    	  if (user.weed_price * 2.5) > user.cash
     			expect { click_button('buy_weed'); user.reload }.not_to change(user, :weed)
       		should have_selector('div.alert.alert-error', text: flash_error)
     		else
@@ -396,13 +396,14 @@ describe "User pages" do
       
       end
   		
-  		
+  	
   		
   		it "should NOT add ounces to the user and SHOULD show Flash Error" do
-    
+        
+        
     		select '3 ounces', from: 'user_shrooms'
     	
-    		if (user.shroom_price * 3) > user.cash
+    		if (user.shroom_price * 2.5) > user.cash
     			expect { click_button('buy_shrooms'); user.reload }.not_to change(user, :shrooms)
       		should have_selector('div.alert.alert-error', text: flash_error)
   			else
@@ -442,7 +443,7 @@ describe "User pages" do
     
     		select '3 ounces', from: 'user_molly'
     	
-    		if (user.molly_price * 3) > user.cash
+    		if (user.molly_price * 2.5) > user.cash
     			expect { click_button('buy_molly'); user.reload }.not_to change(user, :molly)
       		should have_selector('div.alert.alert-error', text: flash_error)
   			else

@@ -129,31 +129,31 @@
  def update 
  	@error = false
  	current_user
-  if params[:buy_weed] && @user.cash >=  (@user.weed_price * weed_amount) 
+  if params[:buy_weed] && @user.cash >=  (p_cash('weed')) 
   	weed_buy
   	cash_buy('weed')
   elsif params[:sell_weed] && @user.weed >= weed_amount
   	weed_sell
   	cash_sell('weed')
-  elsif params[:buy_shrooms] && @user.cash >=  (@user.shroom_price * shroom_amount)
+  elsif params[:buy_shrooms] && @user.cash >=  (p_cash('shrooms'))
 		shrooms_buy
   	cash_buy('shrooms')
   elsif params[:sell_shrooms] && @user.shrooms >= shroom_amount
 		shrooms_sell
 		cash_sell('shrooms')
-  elsif params[:buy_molly] && @user.cash >=  (@user.molly_price * molly_amount)
+  elsif params[:buy_molly] && @user.cash >=  (p_cash('molly'))
  		molly_buy
   	cash_buy('molly')
   elsif params[:sell_molly] && @user.molly >= molly_amount
 		molly_sell
   	cash_sell('molly')
-  elsif params[:buy_cocaine] && @user.cash >=  (@user.cocaine_price * cocaine_amount)
+  elsif params[:buy_cocaine] && @user.cash >=  (p_cash('cocaine'))
   	cocaine_buy
   	cash_buy('cocaine')
   elsif params[:sell_cocaine] && @user.cocaine >= cocaine_amount
   	cocaine_sell
   	cash_sell('cocaine')
-  elsif params[:buy_meth] && @user.cash >=  (@user.meth_price * meth_amount)
+  elsif params[:buy_meth] && @user.cash >=  (p_cash('meth'))
   	meth_buy
   	cash_buy('meth')
   elsif params[:sell_meth] && @user.meth >= meth_amount
@@ -171,6 +171,15 @@
  
  
  
+
+	
+
+
+
+
+
+
+
  if @user.switch == 'albany'
  	    flashin
 		 	redirect_to :back
