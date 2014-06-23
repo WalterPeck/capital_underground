@@ -4,7 +4,7 @@
 
 <div class="row">
 
-	<div class='center span12'>
+	<div class='center col-md-12'>
 
 		
 		
@@ -55,14 +55,14 @@
      ###################################################################-->
 
 
-<div class='row butt'>
+<div class="row">
 		
 		
 			<% if weed_price > 300 %>
 			
-			<div class=" span5 background_red">
+			<div class="col-xs-11 col-md-4 c background_red ">
 	<%else%>
-			<div class=" span5 background">
+			<div class="col-xs-11 col-md-4 c background ">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -88,14 +88,12 @@
   	</div>
 		
 		
-		
-		
 		<% if shroom_price > 275 %>
 			
-			<div class=" span5 background_red">
-	<%else%>
-			<div class=" span5 background">
-	<%end%>
+			<div class="col-xs-11 col-md-4 c background_red ">
+		<%else%>
+			<div class="col-xs-11 col-md-4 c background ">
+		<%end%>
 		   
 		   <div class='activity_rounded'>
 		   	<%=image_tag("shrooms.jpg", width:'130', height: '130')%> 
@@ -103,9 +101,9 @@
 		
 		<div class='  forms pull-right  center'>
 		
-		<h4 class='drug_label'>
-	  	Mushrooms
-	  </h4>
+			<h4 class='drug_label'>
+	  		Mushrooms
+	    </h4>
 		
 		<%= form_for @user, html: {class: "drug_form"}  do |f| %>
 		<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]])%>
@@ -116,21 +114,15 @@
 	 	<% end %>
 		</div>
 	  </div>
-	
-	
-	
-	
-
-  
-<!-- ################################################################### 
-     ###################################################################-->
-
-
-	<% if molly_price > 675 %>
+		
+		
+		
+		
+		<% if molly_price > 675 %>
 			
-			<div class=" span5 background_red">
+			<div class=" col-xs-11 col-md-4 c background_red">
 	<%else%>
-			<div class=" span5 background">
+			<div class=" col-xs-11 col-md-4 c background">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -153,11 +145,14 @@
 		</div>
 		</div>
 		
-	<% if cocaine_price > 1300 %>
+		
+		
+		
+		<% if cocaine_price > 1300 %>
 			
-			<div class=" span5 background_red">
+			<div class=" col-xs-11 col-md-4 c background_red">
 	<%else%>
-			<div class=" span5 background">
+			<div class=" col-xs-11 col-md-4 c background">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -180,15 +175,15 @@
 		<% end %>
 		</div>
 		</div>
-
-<!-- ################################################################### 
-     ###################################################################-->
-		
-	<% if meth_price > 1500 %>
+    
+    
+    
+    
+    	<% if meth_price > 1500 %>
 			
-			<div class=" span5 background_red">
+			<div class=" col-xs-11 col-md-4 c background_red">
 	<%else%>
-			<div class=" span5 background">
+			<div class=" col-xs-11 col-md-4 c background">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -210,12 +205,15 @@
 		<% end %>
 		</div>
 		</div>
-
-<% if oxy_price > 2500 %>
+    
+    
+    
+    
+    <% if oxy_price > 2500 %>
 			
-			<div class=" span5 background_red">
+			<div class=" col-xs-11 col-md-4 c background_red">
 	<%else%>
-			<div class=" span5 background">
+			<div class=" col-xs-11 col-md-4 c background">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -237,15 +235,5 @@
 		<% end %>
 		</div>
 		</div>	
+
 </div>
-
-
-<!-- apparently using remote : true as a attribute in the form for will prevent
-#from reloaing the page
-
-f.hidden_field :cash, :value => @user.cash - cash 
-
-
-
-
--->

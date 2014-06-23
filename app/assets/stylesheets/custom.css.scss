@@ -32,9 +32,24 @@ html {
   overflow-y: scroll;
 }
 
+
+
+
+/* NAVBAR SHIT SON ########################*/
+
+
 body {
-  padding-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+
+/*##########################################*/
+
 
 section {
   overflow: auto;
@@ -74,7 +89,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: lightgray;
 }
 
 p {
@@ -135,11 +150,11 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: lightgray;
   a {
-    color: $gray;
+    color: gray;
     &:hover {
-      color: $grayDarker;
+      color: gray;
     }
   }
   small {
@@ -185,7 +200,7 @@ footer {
 
  .background {
  		background: rgba(86, 212, 128, .64);
- 		border-radius: 40px;
+ 	  border-radius: 40px;
  	  margin-bottom: 20px;
  }
 
@@ -196,13 +211,13 @@ footer {
  }
 
 .drug_form {
-	width: 150px;
+	width: 190px;
 	padding: 0 28px;
 	
 }
 
 .forms {
-	padding-top: 21px;
+	padding-top: 10px;
 	
 }
 
@@ -226,7 +241,12 @@ footer {
 	padding-top: 30px ;
 	}
 
- .butt {
-	  
-   margin-left: 50px
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.c {
+	margin: 10px 20px;
 }

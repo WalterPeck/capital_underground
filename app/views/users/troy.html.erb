@@ -2,12 +2,12 @@
 
 <h1>TROY</h1>
 
-<p><b>Your in troy <%=@user.dealer%></b><p>
+<p><b>Your in troy <%=@user.dealer%>, THIS IS OUTSIDE THE BOOTSTRAP STYLING</b><p>
 
 
 <div class="row">
 
-	<div class='center span12'>
+	<div class='center col-sm-'>
 
 		
 		
@@ -52,11 +52,14 @@
 		
 	</div>
 </div>
-
-<div class='row butt'>
 		
-		
-			<% if weed_price > 300 %>
+	
+<!--MESSING AROUND WITH A BUNCH OF STUFF-->	
+	<div class='row butt'>	
+	
+	
+	
+	<% if weed_price > 300 %>
 			
 			<div class=" span5 background_red">
 	<%else%>
@@ -67,7 +70,7 @@
 			<%=image_tag("weed.jpg", width:'130', height: '130')%> 
 		</div>
 		
-		<div class='  forms pull-right  center'>
+		<div class='forms pull-right  center'>
 		
 			<h4 class='drug_label'>
 	  		Cannabis
@@ -86,7 +89,10 @@
 		</div>
   	</div>
 		
-		
+
+
+
+
 		
 		
 		<% if shroom_price > 275 %>
