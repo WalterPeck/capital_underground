@@ -52,81 +52,174 @@
 <!-- first row-->
 
 <!-- ################################################################### 
-     ###################################################################-->
+    												WEEED
+    ###################################################################-->
 
 
 <div class="row">
 		
-		
-			<% if weed_price > 300 %>
-			
-			<div class="col-xs-11 col-md-4 c background_red ">
+	<% if weed_price > 300 %>
+		<div class="col-xs-11 col-md-4 col-center-block background_red ">
 	<%else%>
-			<div class="col-xs-11 col-md-4 c background ">
+		<div class="col-xs-11 col-md-4 col-center-block background ">
 	<%end%>
 		
-		<div class='activity_rounded'>
-			<%=image_tag("weed.jpg", width:'110', height: '110')%> 
-		</div>
-		
-		<div class='  forms pull-right  center'>
-		
-			<h4 class='drug_label'>
-	  		Cannabis
-	  	</h4>
-		
-			<%= form_for @user, html: {class: "drug_form"} do |f| %>
-		
-			<%= f.select(:weed, [["1 ounce $#{weed_price}", 1], ["2 ounces $#{weed_price * 2}", 2],["3 ounces $#{(weed_price * 2.5).to_i}", 3]]) %>
+		<div class='row'>			
 			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("weed.jpg", width:'110', height: '110')%> 
+				</div>
+			</div>
+					
+				
+			<div class='col-xs-7'>
+				<div class='row' style='padding-top: 5px''>
+					<div class='col-xs-12'>
+						
+						<div class='forms col-center-block '>
+								
+							<h4 class='drug_label'>
+			  				Cannabis
+			  			</h4>
+		
+							<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+		
+							<%= f.select(:weed, [["1 ounce $#{weed_price}", 1], ["2 ounces $#{weed_price * 2}", 2],["3 ounces $#{(weed_price * 2.5).to_i}", 3]]) %>
+						</div>
+					</div>
+				</div>
+				
+				<div class='row' style='padding-top: 3px''>
+						<div class='col-xs-6 buy_button'>
+							<%= f.submit "Buy",  :name => "buy_weed",    class: "btn btn-success btn-lg",   id:"buy_weed" %>
+						</div>
+						<div class='col-xs-6 sell_button '>
+							<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger btn-lg",    id:"sell_weed" %>
+            </div>
+						<% end %>
+				</div>
+					
+  			 
+  		</div> <!-- col-xs-7 FORM COLUMN -->
+    </div> <!-- row that takes up the drug-->
+	</div><!-- col-xs-11 background...the acutal div for the drug section-->
+		
+<!-- ################################################################### 
+    												SHROOMS
+    ###################################################################-->
+		
+
+		
+	<% if shroom_price > 275 %>
+		<div class="col-xs-11 col-md-4 col-center-block background_red ">
+	<%else%>
+		<div class="col-xs-11 col-md-4 col-center-block background ">
+	<%end%>
+		
+		<div class='row'>			
+			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("shrooms.jpg", width:'110', height: '110')%> 
+				</div>
+			</div>
+					
+				
+			<div class='col-xs-7'>
+				<div class='row' style='padding-top: 5px''>
+					<div class='col-xs-12'>
+						
+						<div class='forms col-center-block '>
+								
+							<h4 class='drug_label'>
+			  				Mushrooms
+			  			</h4>
+		
+							<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+		
+							<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]]) %>
+						</div>
+					</div>
+				</div>
+				
+				<div class='row' style='padding-top: 3px''>
+						<div class='col-xs-6 buy_button'>
+							<%= f.submit "Buy",  :name => "buy_shrooms",    class: "btn btn-success btn-lg",   id:"buy_shrooms" %>
+						</div>
+						<div class='col-xs-6 sell_button '>
+							<%= f.submit "Sell", :name => "sell_shrooms",   class: "btn btn-danger btn-lg",    id:"sell_shrooms" %>
+            </div>
+						<% end %>
+				</div>
+					
+  			 
+  		</div> <!-- col-xs-7 FORM COLUMN -->
+    </div> <!-- row that takes up the drug-->
+	</div><!-- col-xs-11 background...the acutal column for the drug-->
+		
+</div><!--row for the whole drug section-->
+	 
 	
-			<%= f.submit "Buy",  :name => "buy_weed",    class: "btn btn-success",   id:"buy_weed" %>
-			<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger",    id:"sell_weed" %>
-   
-			<% end %>
-		</div>
-  	</div>
-		
-		
-		<% if shroom_price > 275 %>
-			
-			<div class="col-xs-11 col-md-4 c background_red ">
-		<%else%>
-			<div class="col-xs-11 col-md-4 c background ">
-		<%end%>
+	
+	
+	
+	
+	
+	
+	
+	
+<!--	
+	<% if shroom_price > 275 %>
+		  <div class="col-xs-11 col-md-4 col-center-block background_red ">
+	 <%else%>
+			<div class="col-xs-11 col-md-4 col-center-block background ">
+	 <%end%>
 		   
-		   <div class='activity_rounded'>
-		   	<%=image_tag("shrooms.jpg", width:'110', height: '110')%> 
-		   	</div>
+		  	<div class='row'>
+		   
+		   		<div class='col-xs-5'>
+		   			<div class='activity_rounded'>
+		   				<%=image_tag("shrooms.jpg", width:'110', height: '110')%> 
+		   			</div>
+		   		</div>
 		
-		<div class='  forms pull-right  center'>
+					<div class='col-xs-7'>
+						<div class='  forms col-center-block'>
 		
-			<h4 class='drug_label'>
-	  		Mushrooms
-	    </h4>
+							<h4 class='drug_label'>
+	  						Shrooms
+	    				</h4>
 		
-		<%= form_for @user, html: {class: "drug_form"}  do |f| %>
-		<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]])%>
+							<%= form_for @user, html: {class: "drug_form col-center-block"}  do |f| %>
+							<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]])%>
  		
  				
- 		<%= f.submit "Buy",  :name => "buy_shrooms", class: "btn btn-success", id:"buy_shrooms" %>
- 		<%= f.submit "Sell", :name => "sell_shrooms", class: "btn btn-danger", id:"sell_shrooms"%>
-	 	<% end %>
+ 							<%= f.submit "Buy",  :name => "buy_shrooms", class: "btn btn-sm btn-success", id:"buy_shrooms" %>
+ 							<%= f.submit "Sell", :name => "sell_shrooms", class: "btn btn-sm btn-danger", id:"sell_shrooms"%>
+	 						<% end %>
+				 		</div>
+				 	</div>
+			  
+			  </div>
+	    
+	    </div>
+		
+		
+		
 		</div>
-	  </div>
 		
 		
 		
-		
-		<% if molly_price > 675 %>
+	<% if molly_price > 675 %>
 			
-			<div class=" col-xs-11 col-md-4 c background_red">
+			<div class=" col-xs-11 col-md-4 col-center-block background_red">
 	<%else%>
-			<div class=" col-xs-11 col-md-4 c background">
+			<div class=" col-xs-11 col-md-4 col-center-block background">
 	<%end%>
 		
 		<div class='activity_rounded'>
-			<%=image_tag("molly.jpg", width:'110', height: '110')%> 
+			<%=image_tag("molly.jpg", width:'110', height: '110 ')%> 
 		</div>
 		
 		<div class='  forms pull-right  center'>
@@ -150,9 +243,9 @@
 		
 		<% if cocaine_price > 1300 %>
 			
-			<div class=" col-xs-11 col-md-4 c background_red">
+			<div class=" col-xs-11 col-md-4 col-center-block background_red">
 	<%else%>
-			<div class=" col-xs-11 col-md-4 c background">
+			<div class=" col-xs-11 col-md-4 col-center-block background">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -181,9 +274,9 @@
     
     	<% if meth_price > 1500 %>
 			
-			<div class=" col-xs-11 col-md-4 c background_red">
+			<div class=" col-xs-11 col-md-4 col-center-block background_red">
 	<%else%>
-			<div class=" col-xs-11 col-md-4 c background">
+			<div class=" col-xs-11 col-md-4 col-center-block background">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -211,9 +304,9 @@
     
     <% if oxy_price > 2500 %>
 			
-			<div class=" col-xs-11 col-md-4 c background_red">
+			<div class=" col-xs-11 col-md-4 col-center-block background_red">
 	<%else%>
-			<div class=" col-xs-11 col-md-4 c background">
+			<div class=" col-xs-11 col-md-4 col-center-block background">
 	<%end%>
 		
 		<div class='activity_rounded'>
@@ -236,4 +329,4 @@
 		</div>
 		</div>	
 
-</div>
+</div> -->
