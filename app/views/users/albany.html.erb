@@ -2,9 +2,6 @@
 
 <!-- There is alot of repeated cash process's see if you really need all of them -->
 
-<div class="row">
-
-	<div class='center col-md-12'>
 
 		
 		
@@ -18,38 +15,12 @@
 		
 		<% oxy_price = @user.oxy_price %>
 		
-		
-		
-		
-<!-- ############################################################################### -->
-
-
-
-		<lead>Hey There <%= @user.dealer %>. <%= @user.movie %> was
-			a pretty good movie...I guess.</lead>
-
-		<h2>
-			You have $<%= @user.cash %> go buy some fuggin drugs
-		
-		</h2>
-
-		
-		<p>You have <%= @user.weed%> ounces of chronic/weed/nug .</p>
-		<p>You have <%= @user.shrooms%> ounces of magic mushrooms.</p>
-		<p>You have <%= @user.molly%> ounces of molly.</p>
-		<p>You have <%= @user.cocaine%> ounces of cocaine.</p>
-    <p>You have <%= @user.meth%>    ounces of meth.</p>
-    <p>You have <%= @user.oxy%>     pills of oxycontin.</p>
-    
-
-	  <p><b>test:</b><i>		 		 <%= @lame %>     		 per ounce</i></p>
-	  <p><b>@@switch before the method</b><i>		 		 <%= @first_time%>   </i></p>
-		<p><b>view variable from the controller:</b><i>		 		 <%= @view_variable %></i></p>
-		<p><b>@@switch after the method</b><i>		 		 <%= @second_time %>     		</i></p>
-		
-	</div>
+<div class="jumbotron" >
+<%=image_tag("Albany.jpg")%>
 </div>
-<!-- first row-->
+		
+		
+
 
 <!-- ################################################################### 
     												WEEED
@@ -85,7 +56,7 @@
 		
 							<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 		
-							<%= f.select(:weed, [["1 ounce $#{weed_price}", 1], ["2 ounces $#{weed_price * 2}", 2],["3 ounces $#{(weed_price * 2.5).to_i}", 3]]) %>
+							<%= f.select(:weed, [["1 oz $#{weed_price}", 1], ["2 oz $#{weed_price * 2}", 2],["3 oz $#{(weed_price * 2.5).to_i}", 3]]) %>
 						</div>
 					</div>
 				</div>
@@ -138,7 +109,7 @@
 		
 							<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 		
-							<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]]) %>
+							<%= f.select(:shrooms, [["1 oz $#{shroom_price}", 1], ["2 oz $#{shroom_price * 2}", 2],["3 oz $#{(shroom_price * 2.5).to_i}", 3]]) %>
 						</div>
 					</div>
 				</div>
@@ -195,7 +166,7 @@
 		
 							<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 		
-							<%= f.select(:molly, [["1 ounce $#{molly_price}", 1], ["2 ounces $#{molly_price * 2}", 2],["3 ounces $#{(molly_price * 2.5).to_i}", 3]]) %>
+							<%= f.select(:molly, [["1 oz $#{molly_price}", 1], ["2 oz $#{molly_price * 2}", 2],["3 oz $#{(molly_price * 2.5).to_i}", 3]]) %>
 						</div>
 					</div>
 				</div>
@@ -251,7 +222,7 @@
 		
 							<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 		
-							<%= f.select(:cocaine, [["1 ounce $#{cocaine_price}", 1], ["2 ounces $#{cocaine_price * 2}", 2],["3 ounces $#{(cocaine_price * 2.5).to_i}", 3]]) %>
+							<%= f.select(:cocaine, [["1 oz $#{cocaine_price}", 1], ["2 oz $#{cocaine_price * 2}", 2],["3 oz $#{(cocaine_price * 2.5).to_i}", 3]]) %>
 						</div>
 					</div>
 				</div>
@@ -306,7 +277,7 @@
 		
 							<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 		
-							<%= f.select(:meth, [["1 ounce $#{meth_price}", 1], ["2 ounces $#{meth_price * 2}", 2],["3 ounces $#{(meth_price * 2.5).to_i}", 3]]) %>
+							<%= f.select(:meth, [["1 oz $#{meth_price}", 1], ["2 oz $#{meth_price * 2}", 2],["3 oz $#{(meth_price * 2.5).to_i}", 3]]) %>
 						</div>
 					</div>
 				</div>
@@ -406,7 +377,7 @@
 	    				</h4>
 		
 							<%= form_for @user, html: {class: "drug_form col-center-block"}  do |f| %>
-							<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]])%>
+							<%= f.select(:shrooms, [["1 oz $#{shroom_price}", 1], ["2 oz $#{shroom_price * 2}", 2],["3 oz $#{(shroom_price * 2.5).to_i}", 3]])%>
  		
  				
  							<%= f.submit "Buy",  :name => "buy_shrooms", class: "btn btn-sm btn-success", id:"buy_shrooms" %>
@@ -443,7 +414,7 @@
 	  	</h4>
 		<%= form_for @user, html: {class: "drug_form"} do |f| %>
 		
-		<%= f.select(:molly, [["1 ounce $#{molly_price}", 1], ["2 ounces $#{molly_price * 2}", 2],["3 ounces $#{(molly_price * 2.5).to_i}", 3]]) %>
+		<%= f.select(:molly, [["1 oz $#{molly_price}", 1], ["2 oz $#{molly_price * 2}", 2],["3 oz $#{(molly_price * 2.5).to_i}", 3]]) %>
 	
 
 	  <%= f.submit "Buy",  :name => "buy_molly",  class: "btn btn-success", id:"buy_molly" %>
@@ -474,7 +445,7 @@
 		
 	  <%= form_for @user, html: {class: "drug_form"} do |f| %>
 		
-		<%= f.select(:cocaine, [["1 ounce $#{cocaine_price}", 1], ["2 ounces $#{cocaine_price * 2}", 2], ["3 ounces $#{(cocaine_price * 2.5).to_i}", 3]]) %>
+		<%= f.select(:cocaine, [["1 oz $#{cocaine_price}", 1], ["2 oz $#{cocaine_price * 2}", 2], ["3 oz $#{(cocaine_price * 2.5).to_i}", 3]]) %>
 	
 
 		<%= f.submit "Buy",  :name => "buy_cocaine",  class: "btn btn-success", id:"buy_cocaine" %>
@@ -504,7 +475,7 @@
 	  	</h4>	
 		<%= form_for @user, html: {class: "drug_form"} do |f| %>
 		
-		<%= f.select(:meth, [["1 ounce $#{meth_price}", 1], ["2 ounces $#{meth_price * 2}", 2], ["3 ounces $#{(meth_price * 2.5).to_i}", 3]]) %>
+		<%= f.select(:meth, [["1 oz $#{meth_price}", 1], ["2 oz $#{meth_price * 2}", 2], ["3 oz $#{(meth_price * 2.5).to_i}", 3]]) %>
 		
 		
 		<%= f.submit "Buy",  :name => "buy_meth",  class: "btn btn-success", id:"buy_meth" %>
