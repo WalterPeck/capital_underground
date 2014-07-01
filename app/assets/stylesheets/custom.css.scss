@@ -15,6 +15,9 @@ $grayMediumLight: #eaeaea;
 	box-sizing: border-box;
 }
 
+@mixin jumbo_shadow {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.94);
+}
 
 /* miscellaneous */
 
@@ -41,12 +44,29 @@ html {
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background: #333537;
+  color: #d6d6d6;
 }
 
 .navbar {
-  margin-bottom: 20px;
+ margin-bottom: 20px;
+
 }
 
+.navbar-header {
+	p {font-weight:500;}
+	
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffd0ff
+}
+
+
+.navbar-inverse .navbar-brand {
+    color: #f782ff;
+}
 
 /*##########################################*/
 
@@ -75,13 +95,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-h1 {
-  font-family: brush script mt;
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
+
 
 h2 {
   font-size: 1.2em;
@@ -93,8 +107,7 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+  
 	
 }
 
@@ -170,12 +183,23 @@ footer {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
 /*########################################################
 -----------	DRUG BUTTON STYLING -------------------
 	########################################################
 */
 
 .activity_rounded {
+    
     margin: 20px 0 20px 0px;
     display: inline-block;
     -webkit-border-radius: 30%;
@@ -199,21 +223,28 @@ footer {
 
 
  .background {
- 		background: rgba(86, 212, 128, .64);
+ 		background: #39e78d;
  	  border-radius: 40px;
  	  margin-bottom: 15px;
  }
 
  .background_red {
- 		background: rgba(221, 35, 8, .64);
+ 		background: #ff0038;
  		border-radius: 40px;
  	  margin-bottom: 15px;
  }
+
+
+
 
 .drug_form {
 	width: 135px;
 	padding: 0 5px;
 		margin-bottom: -5px;
+}
+
+input, select, textarea{
+    color: black;
 }
 
 .forms {
@@ -243,12 +274,23 @@ footer {
 
 }
 
+.btn-success {
+    background-image: linear-gradient(to bottom, #5CB85C 0px, #419641 100%);
+    background-repeat: repeat-x;
+    border-color: #3E8F3E;
+}
+
+
 .sell_button{
 	padding-left: 3px;
 	padding-right: 20px;
 }
 
-
+.btn-danger {
+    background-image: linear-gradient(to bottom, #D9534F 0px, #C12E2A 100%);
+    background-repeat: repeat-x;
+    border-color: #B92C28;
+}
 
 .drug_row {
 	padding-top: 30px ;
@@ -272,14 +314,90 @@ footer {
 }
 
 
+ 
+ 
+
 /*########################################################
 -----------	Heading -------------------
 	########################################################
 */
 
+ 
 .jumbotron {
-		padding: 0px;
-		background-image: "Albany.jpg";
-		background-repeat: no-repeat;
-    border-radius: 40px;
+   
+   padding: 15px;
+   background: url("home.jpg") no-repeat center center; 
+   -webkit-border-radius: 35%;
+    -moz-border-radius: 35%;
+    border-radius: 35%;
+    -khtml-border-radius: 35%;
+    vertical-align: middle;
+   h1{ color: #f75bf5;
+   		 font-weight: 900;
+   		 line-height: 1.2;}
+  h2{ font-size: 2.2em;
+  		font-weight: 500;
+  		text-align: justify;}	
+  
+  }
+
+
+
+.home {
+	color: white; 
+	padding-top: 60px;
+	
+
+	@include jumbo_shadow;
+	
 }
+
+.push-spaces
+{
+    height: 100px;
+}
+
+.title {
+	
+
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.73);
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.shadow {
+	@include jumbo_shadow;
+	}
+
+/*########################################################
+-----------	Sign-up/in -------------------
+	########################################################
+*/
+
+.signin {
+	margin-top: 20px
+}
+
+/*########################################################
+-----------	City Pages -------------------
+	########################################################
+*/
+
+
+
+.city {
+	h1{ letter-spacing: -1px ;
+			padding-bottom:200px;}
+}
+
+
+.albany {
+	background: url("Albany.jpg") no-repeat center center; 
+	
+}
+
+
+
+
