@@ -1,13 +1,7 @@
 <% provide(:title, @user.dealer) %>
 
-<h1>TROY</h1>
+<!-- There is alot of repeated cash process's see if you really need all of them -->
 
-<p><b>Your in troy <%=@user.dealer%>, THIS IS OUTSIDE THE BOOTSTRAP STYLING</b><p>
-
-
-<div class="row">
-
-	<div class='center col-sm-'>
 
 		
 		
@@ -21,225 +15,343 @@
 		
 		<% oxy_price = @user.oxy_price %>
 		
-		
-		
-		
-<!-- ############################################################################### -->
-
-
-
-		<lead>Hey There <%= @user.dealer %>. <%= @user.movie %> was
-			a pretty good movie...I guess.</lead>
-
-		<h2>
-			You have $<%= @user.cash %> go buy some fuggin drugs
-		
-		</h2>
-
-		
-		<p>You have <%= @user.weed%> ounces of chronic/weed/nug .</p>
-		<p>You have <%= @user.shrooms%> ounces of magic mushrooms.</p>
-		<p>You have <%= @user.molly%> ounces of molly.</p>
-		<p>You have <%= @user.cocaine%> ounces of cocaine.</p>
-    <p>You have <%= @user.meth%>    ounces of meth.</p>
-    <p>You have <%= @user.oxy%>     pills of oxycontin.</p>
-    
-
-	  <p><b>test:</b><i>		 		 <%= @lame %>     		 per ounce</i></p>
-	  <p><b>@@switch before the method</b><i>		 		 <%= @first_time%>   </i></p>
-		<p><b>view variable from the controller:</b><i>		 		 <%= @view_variable %></i></p>
-		<p><b>@@switch after the method</b><i>		 		 <%= @second_time %>     		</i></p>
-		
-	</div>
-</div>
-		
-	
-<!--MESSING AROUND WITH A BUNCH OF STUFF-->	
-	<div class='row butt'>	
-	
-	
-	
-	<% if weed_price > 300 %>
-			
-			<div class=" span5 background_red">
-	<%else%>
-			<div class=" span5 background">
-	<%end%>
-		
-		<div class='activity_rounded'>
-			<%=image_tag("weed.jpg", width:'130', height: '130')%> 
-		</div>
-		
-		<div class='forms pull-right  center'>
-		
-			<h4 class='drug_label'>
-	  		Cannabis
-	  	</h4>
-		
-			<%= form_for @user, html: {class: "drug_form"} do |f| %>
-		
-			<%= f.select(:weed, [["1 ounce $#{weed_price}", 1], ["2 ounces $#{weed_price * 2}", 2],["3 ounces $#{(weed_price * 2.5).to_i}", 3]]) %>
-			
-	
-			<%= f.submit "Buy",  :name => "buy_weed",    class: "btn btn-success", id:"buy_weed" %>
-			
-			<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger",  id:"sell_weed" %> 
+<div class="jumbotron city troy">
+        
+        <h1 class="title">Troy</h1>
+    		 <br><br>
    
-			<% end %>
-		</div>
-  	</div>
-		
-
-
-
-
-		
-		
-		<% if shroom_price > 275 %>
-			
-			<div class=" span5 background_red">
-	<%else%>
-			<div class=" span5 background">
-	<%end%>
-		   
-		   <div class='activity_rounded'>
-		   	<%=image_tag("shrooms.jpg", width:'130', height: '130')%> 
-		   	</div>
-		
-		<div class='  forms pull-right  center'>
-		
-		<h4 class='drug_label'>
-	  	Mushrooms
-	  </h4>
-		
-		<%= form_for @user, html: {class: "drug_form"}  do |f| %>
-		<%= f.select(:shrooms, [["1 ounce $#{shroom_price}", 1], ["2 ounces $#{shroom_price * 2}", 2],["3 ounces $#{(shroom_price * 2.5).to_i}", 3]])%>
- 		
- 				
- 		<%= f.submit "Buy",  :name => "buy_shrooms", class: "btn btn-success", id:"buy_shrooms" %>
- 		<%= f.submit "Sell", :name => "sell_shrooms", class: "btn btn-danger", id:"sell_shrooms"%>
-	 	<% end %>
-		</div>
-	  </div>
-	
-	
-	
-	
-
-  
-<!-- ################################################################### 
-     ###################################################################-->
-
-
-	<% if molly_price > 675 %>
-			
-			<div class=" span5 background_red">
-	<%else%>
-			<div class=" span5 background">
-	<%end%>
-		
-		<div class='activity_rounded'>
-			<%=image_tag("molly.jpg", width:'130', height: '130')%> 
-		</div>
-		
-		<div class='  forms pull-right  center'>
-		
-			<h4 class='drug_label'>
-	  		Molly
-	  	</h4>
-		<%= form_for @user, html: {class: "drug_form"} do |f| %>
-		
-		<%= f.select(:molly, [["1 ounce $#{molly_price}", 1], ["2 ounces $#{molly_price * 2}", 2],["3 ounces $#{(molly_price * 2.5).to_i}", 3]]) %>
-	
-
-	  <%= f.submit "Buy",  :name => "buy_molly", class: "btn btn-success", id:"buy_molly" %>
- 	  <%= f.submit "Sell", :name => "sell_molly", class: "btn btn-danger", id:"sell_molly"%>
-		<% end %>
-		</div>
-		</div>
-		
-	<% if cocaine_price > 1100 %>
-			
-			<div class=" span5 background_red">
-	<%else%>
-			<div class=" span5 background">
-	<%end%>
-		
-		<div class='activity_rounded'>
-			<%=image_tag("cocaine.jpg", width:'130', height: '130')%> 
-		</div>
-		
-		<div class='  forms pull-right  center'>
-		
-			<h4 class='drug_label'>
-	  		Cocaine
-	  	</h4>	
-		
-	  <%= form_for @user, html: {class: "drug_form"} do |f| %>
-		
-		<%= f.select(:cocaine, [["1 ounce $#{cocaine_price}", 1], ["2 ounces $#{cocaine_price * 2}", 2], ["3 ounces $#{(cocaine_price * 2.5).to_i}", 3]]) %>
-	
-
-		<%= f.submit "Buy",  :name => "buy_cocaine",  class: "btn btn-success", id:"buy_cocaine" %>
-		<%= f.submit "Sell", :name => "sell_cocaine", class: "btn btn-danger",  id:"sell_cocaine"%>
-		<% end %>
-		</div>
-		</div>
-
-<!-- ################################################################### 
-     ###################################################################-->
-		
-	<% if meth_price > 900 %>
-			
-			<div class=" span5 background_red">
-	<%else%>
-			<div class=" span5 background">
-	<%end%>
-		
-		<div class='activity_rounded'>
-			<%=image_tag("meth.jpg", width:'130', height: '130')%> 
-		</div>
-		
-		<div class='  forms pull-right  center'>
-		
-			<h4 class='drug_label'>
-	  		Crystal Meth
-	  	</h4>	
-		<%= form_for @user, html: {class: "drug_form"} do |f| %>
-		
-		<%= f.select(:meth, [["1 ounce $#{meth_price}", 1], ["2 ounces $#{meth_price * 2}", 2], ["3 ounces $#{(meth_price * 2.5).to_i}", 3]]) %>
-		
-		
-		<%= f.submit "Buy",  :name => "buy_meth",  class: "btn btn-success", id:"buy_meth" %>
-		<%= f.submit "Sell", :name => "sell_meth", class: "btn btn-danger",  id:"sell_meth" %>
-		<% end %>
-		</div>
-		</div>
-
-<% if oxy_price > 1700 %>
-			
-			<div class=" span5 background_red">
-	<%else%>
-			<div class=" span5 background">
-	<%end%>
-		
-		<div class='activity_rounded'>
-			<%=image_tag("oxy.jpg", width:'130', height: '130')%> 
-		</div>
-		
-		<div class='  forms pull-right center'>
-		
-			<h4 class='drug_label'>
-	  		Oxycontin
-	  	</h4>	
-		<%= form_for @user, html: {class: "drug_form"} do |f| %>
-		
-		<%= f.select(:oxy, [["50 pills $#{oxy_price}", 1], ["100 pills $#{oxy_price * 2}", 2], ["200 pills $#{(oxy_price * 3.3).to_i}", 4]]) %>
-		<%= f.hidden_field :cash, :value => oxy_price %>
-		
-		<%= f.submit "Buy",  :name => "buy_oxy",  class: "btn btn-success", id:"buy_oxy" %>
-		<%= f.submit "Sell", :name => "sell_oxy", class: "btn btn-danger",  id:"sell_oxy" %>
-		<% end %>
-		</div>
-		</div>	
+   			
+   			
 </div>
+		
+<div class="row">
+
+<!-- ################################################################### 
+    												WEEED
+    ###################################################################-->
+
+
+
+		
+<% if weed_price > 300 %>
+	<div class="col-xs-11 col-md-4 col-center-block background_red ">
+<%else%>
+	<div class="col-xs-11 col-md-4 col-center-block background ">
+<%end%>
+		
+		<div class='row'>			
+			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("weed.jpg", width:'102', height: '102')%> 
+				</div>
+			</div>
+					
+				
+			<div class='col-xs-7'>
+				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+				
+				<div class='forms col-center-block '>
+					
+					<div class='row' style='padding-top: 8px'>
+						<div class='col-xs-12'>
+						
+							<h4 class='drug_label'>
+			  				Cannabis
+			  			</h4>
+		
+							
+		
+							<%= f.select(:weed, [["1 oz $#{weed_price}", 1], ["2 oz $#{weed_price * 2}", 2],["3 oz $#{(weed_price * 2.5).to_i}", 3]]) %>
+						
+						</div>
+					</div>
+				
+				  <div class='row' style='padding-top: 3px'>
+						<div class='col-xs-6 buy_button'>
+							<%= f.submit "Buy",  :name => "buy_weed",    class: "btn btn-success btn-md",   id:"buy_weed" %>
+						</div>
+						<div class='col-xs-6 sell_button '>
+							<%= f.submit "Sell", :name => "sell_weed",   class: "btn btn-danger btn-md",    id:"sell_weed" %>
+            </div>
+					</div><!-- buy/sell button row-->
+				
+				</div> <!-- form div center-block thang-->
+			  <%end%>
+  			 
+  		</div> <!-- col-xs-7 FORM COLUMN -->
+    </div> <!-- row that takes up the drug-->
+	</div><!-- col-xs-11 background...the acutal div for the drug section-->
+<!-- ################################################################### 
+    												SHROOMS
+    ###################################################################-->
+		
+
+		
+<% if shroom_price > 275 %>
+	<div class="col-xs-11 col-md-4 col-center-block background_red ">
+<%else%>
+	<div class="col-xs-11 col-md-4 col-center-block background ">
+<%end%>
+		
+		<div class='row'>			
+			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("shrooms.jpg", width:'102', height: '102')%> 
+				</div>
+			</div>
+					
+				
+			<div class='col-xs-7'>
+				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+				
+				<div class='forms col-center-block '>
+					
+					<div class='row' style='padding-top: 8px''>
+						<div class='col-xs-12'>
+						
+							<h4 class='drug_label'>
+			  				Shrooms
+			  			</h4>
+		
+							<%= f.select(:shrooms, [["1 oz $#{shroom_price}", 1], ["2 oz $#{shroom_price * 2}", 2],["3 oz $#{(shroom_price * 2.5).to_i}", 3]]) %>
+						
+					  </div>
+					</div>
+				
+				
+				<div class='row' style='padding-top: 3px''>
+					<div class='col-xs-6 buy_button'>
+						<%= f.submit "Buy",  :name => "buy_shrooms",    class: "btn btn-success btn-md",   id:"buy_shrooms" %>
+					</div>
+					<div class='col-xs-6 sell_button '>
+						<%= f.submit "Sell", :name => "sell_shrooms",   class: "btn btn-danger btn-md",    id:"sell_shrooms" %>
+          </div>
+				</div>	<!-- buy/sell button row-->
+			
+			</div><!-- form div center-block thang-->
+	  	<%end%>			
+  			 
+  	</div> <!-- col-xs-7 FORM COLUMN -->
+  </div> <!-- row that takes up the drug-->
+</div><!-- col-xs-11 background...the acutal column for the drug-->
+
+<!-- ################################################################### 
+    												MOllY
+    ###################################################################-->
+		
+
+		
+<% if molly_price > 675 %>
+	<div class="col-xs-11 col-md-4 col-center-block background_red ">
+<%else%>
+	<div class="col-xs-11 col-md-4 col-center-block background ">
+<%end%>
+		
+		<div class='row'>			
+			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("molly.jpg", width:'102', height: '102')%> 
+				</div>
+			</div>
+					
+				
+			<div class='col-xs-7'>
+				
+				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+				
+				<div class='forms col-center-block '>
+				
+					<div class='row' style='padding-top: 8px''>
+						<div class='col-xs-12'>
+						
+							<h4 class='drug_label'>
+			  				Molly
+			  			</h4>
+		
+			       	<%= f.select(:molly, [["1 oz $#{molly_price}", 1], ["2 oz $#{molly_price * 2}", 2],["3 oz $#{(molly_price * 2.5).to_i}", 3]]) %>
+						</div>
+					</div>
+				
+					<div class='row' style='padding-top: 3px''>
+						<div class='col-xs-6 buy_button'>
+							<%= f.submit "Buy",  :name => "buy_molly",    class: "btn btn-success btn-md",   id:"buy_molly" %>
+						</div>
+						<div class='col-xs-6 sell_button '>
+							<%= f.submit "Sell", :name => "sell_molly",   class: "btn btn-danger btn-md",    id:"sell_molly" %>
+            </div>
+					</div> 
+				
+				</div><!-- form div center-block thang-->
+			  <%end%>				
+  			 
+  		</div> <!-- col-xs-7 FORM COLUMN -->
+    </div> <!-- row that takes up the drug-->
+	</div><!-- col-xs-11 background...the acutal column for the drug-->
+		
+<!-- ################################################################### 
+    												Cocaine
+    ###################################################################-->
+		
+
+		
+<% if cocaine_price > 1300 %>
+	<div class="col-xs-11 col-md-4 col-center-block background_red ">
+<%else%>
+	<div class="col-xs-11 col-md-4 col-center-block background ">
+<%end%>
+		
+		<div class='row'>			
+			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("cocaine.jpg", width:'102', height: '102')%> 
+				</div>
+			</div>
+					
+				
+			<div class='col-xs-7'>
+				
+				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+				
+				<div class='forms col-center-block '>				
+					
+					<div class='row' style='padding-top: 8px''>
+						<div class='col-xs-12'>
+					
+							<h4 class='drug_label'>
+			  				Cocaine
+			  			</h4>
+		
+			        <%= f.select(:cocaine, [["1 oz $#{cocaine_price}", 1], ["2 oz $#{cocaine_price * 2}", 2],["3 oz $#{(cocaine_price * 2.5).to_i}", 3]]) %>
+						</div>
+					</div>
+				
+				
+				<div class='row' style='padding-top: 3px''>
+						<div class='col-xs-6 buy_button'>
+							<%= f.submit "Buy",  :name => "buy_cocaine",    class: "btn btn-success btn-md",   id:"buy_cocaine" %>
+						</div>
+						<div class='col-xs-6 sell_button '>
+							<%= f.submit "Sell", :name => "sell_cocaine",   class: "btn btn-danger btn-md",    id:"sell_cocaine" %>
+            </div>
+				</div>
+			
+			</div><!-- form div center-block thang-->
+			<%end%>
+  			 
+  		</div> <!-- col-xs-7 FORM COLUMN -->
+    </div> <!-- row that takes up the drug-->
+	</div><!-- col-xs-11 background...the acutal column for the drug-->
+
+<!-- ################################################################### 
+    												Meth
+    ###################################################################-->
+		
+
+		
+<% if meth_price > 1500 %>
+	<div class="col-xs-11 col-md-4 col-center-block background_red ">
+<%else%>
+	<div class="col-xs-11 col-md-4 col-center-block background ">
+<%end%>
+		
+		<div class='row'>			
+			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("meth.jpg", width:'102', height: '102')%> 
+				</div>
+			</div>
+					
+				
+			<div class='col-xs-7'>
+			
+			<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+			
+				<div class='forms col-center-block '>	
+				
+					<div class='row' style='padding-top: 8px''>
+						<div class='col-xs-12'>
+						
+							<h4 class='drug_label'>
+			  				Meth
+			  			</h4>
+		
+							<%= f.select(:meth, [["1 oz $#{meth_price}", 1], ["2 oz $#{meth_price * 2}", 2],["3 oz $#{(meth_price * 2.5).to_i}", 3]]) %>
+						</div>
+				 </div>
+				
+				
+				 <div class='row' style='padding-top: 3px''>
+						<div class='col-xs-6 buy_button'>
+							<%= f.submit "Buy",  :name => "buy_meth",    class: "btn btn-success btn-md",   id:"buy_meth" %>
+						</div>
+						<div class='col-xs-6 sell_button '>
+							<%= f.submit "Sell", :name => "sell_meth",   class: "btn btn-danger btn-md",    id:"sell_meth" %>
+            </div>
+         </div>
+				
+			 </div><!-- form div center-block thang-->
+		<%end%>
+  			 
+  	</div> <!-- col-xs-7 FORM COLUMN -->
+  </div> <!-- row that takes up the drug-->
+</div><!-- col-xs-11 background...the acutal column for the drug-->
+
+<!-- ################################################################### 
+    												Oxy
+    ###################################################################-->
+		
+
+		
+<% if oxy_price > 2500 %>
+	<div class="col-xs-11 col-md-4 col-center-block background_red ">
+<%else%>
+	<div class="col-xs-11 col-md-4 col-center-block background ">
+<%end%>
+		
+		<div class='row'>			
+			
+			<div class='col-xs-5'>	
+				<div class='activity_rounded'>
+					<%=image_tag("oxy.jpg", width:'102', height: '102')%> 
+				</div>
+			</div>
+					
+			<div class='col-xs-7'>
+			
+			<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
+			
+				<div class='forms col-center-block '>
+				
+					<div class='row' style='padding-top: 8px''>
+						<div class='col-xs-12'>
+						
+							<h4 class='drug_label'>
+			  				Oxycontin
+			  			</h4>
+		
+				 			<%= f.select(:oxy, [["50 pills $#{oxy_price}", 1], ["100 pills $#{oxy_price * 2}", 2],["200 pills $#{(oxy_price * 3.3).to_i}", 4]]) %>
+						</div>
+					</div>
+				
+				
+					<div class='row' style='padding-top: 3px''>
+						<div class='col-xs-6 buy_button'>
+							<%= f.submit "Buy",  :name => "buy_oxy",    class: "btn btn-success btn-md",   id:"buy_oxy" %>
+						</div>
+						<div class='col-xs-6 sell_button '>
+							<%= f.submit "Sell", :name => "sell_oxy",   class: "btn btn-danger btn-md",    id:"sell_oxy" %>
+            </div>
+					</div>	
+
+				</div> <!-- form div center-block thang-->
+			<% end %>	
+			</div> <!-- col-xs-7 FORM COLUMN -->
+  </div> <!-- row that takes up the drug-->
+</div><!-- col-xs-11 background...the acutal column for the drug-->	
+
+</div><!-- Entire Drug Deal Row-->		

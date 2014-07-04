@@ -135,7 +135,7 @@ input {
 
 .field_with_errors {
 	@extend .control-group !optional;
-	
+	@extend .error;
 }
 
 /* header */
@@ -326,11 +326,12 @@ input, select, textarea{
 .jumbotron {
    
    padding: 15px;
-   background: image-url("home.jpg") no-repeat center center; 
-   -webkit-border-radius: 35%;
-    -moz-border-radius: 35%;
-    border-radius: 35%;
-    -khtml-border-radius: 35%;
+   background: image-url("Albany_1.jpg") no-repeat center center; 
+   background-size: cover;
+   -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -khtml-border-radius: 50%;
     vertical-align: middle;
    h1{ color: #f75bf5;
    		 font-weight: 900;
@@ -363,8 +364,9 @@ input, select, textarea{
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.73);
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 0px;
   margin-top: 0px;
+  margin-bottom: 0px;
+  
 }
 
 .shadow {
@@ -388,15 +390,25 @@ input, select, textarea{
 
 .city {
 	h1{ letter-spacing: -1px ;
-			padding-bottom:200px;}
+			padding-top: 180px;
+			margin-bottom:-20px;}
+			
 }
 
 
 .albany {
 	background: image-url("Albany.jpg") no-repeat center center; 
-	
+	background-size: cover;	
+}
+
+.troy {
+	background: image-url("Troy.jpg") no-repeat center center; 
+	background-size: cover;
 }
 
 
-
-
+img {
+          display: block;
+          height: auto;
+          max-width: 100%;
+}
