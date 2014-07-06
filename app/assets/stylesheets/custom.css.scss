@@ -202,6 +202,7 @@ footer {
     
     margin: 20px 0 20px 0px;
     display: inline-block;
+    vertical-align: middle;
     -webkit-border-radius: 30%;
     -moz-border-radius: 30%;
     border-radius: 30%;
@@ -313,7 +314,9 @@ input, select, textarea{
     margin-right: auto;
 }
 
-
+.form_margin {
+	margin-left: -20px;
+}
  
  
 
