@@ -250,7 +250,9 @@ input, select, textarea{
 
 .forms {
 	padding-top: 5px;
-	
+	select {
+		margin-bottom: 10px;
+	}
 }
 
 .drug_label {
