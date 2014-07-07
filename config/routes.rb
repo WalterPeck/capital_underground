@@ -13,7 +13,7 @@ CapitalUnderground::Application.routes.draw do
   match '/signout', to: 'sessions#destroy',		 via: 'delete'
   match '/schen',   to: 'static_pages#schen',	 via: 'get'
   match '/help',    to: 'static_pages#help',   via: 'get'
-  match '/score',   to: 'static_pages#score',  via: 'get'
+  match '/about',   to: 'static_pages#about',  via: 'get'
  	
  	
  # The priority is based upon order of creation: first created -> highest priority.

@@ -2,7 +2,7 @@
 <html>
   <head>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +12,15 @@
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    
   </head>
   <body>
- 
+ 		 <%= render 'layouts/header' %>
     <div class="container">
-      <%= render 'layouts/header' %>
+      
       <% flash.each do |key, value| %>
       	<div class="alert alert-<%= key %>"><%= value %></div>
       <%end%>
@@ -27,8 +30,9 @@
     </div>
    
    <!-- SOME SWEET JAVA for the navbar -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> /> -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+     
   </body>
 </html>

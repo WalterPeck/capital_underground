@@ -41,29 +41,30 @@
 		
 		<div class='row'>			
 			
-			<div class='col-xs-5'>	
+			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("weed.jpg", width:'102', height: '102')%> 
 				</div>
 			</div>
 					
 				
-			<div class='col-xs-7'>
+			<div class='col-xs-6 form_margin'>
 				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 				
-				<div class='forms col-center-block '>
+			
 					
 					<div class='row' style='padding-top: 8px'>
 						<div class='col-xs-12'>
-						
+								<div class='forms col-center-block '>
 							<h4 class='drug_label'>
 			  				Cannabis
 			  			</h4>
 		
-							
+											
 		
 							<%= f.select(:weed, [["1 oz $#{weed_price}", 1], ["2 oz $#{weed_price * 2}", 2],["3 oz $#{(weed_price * 2.5).to_i}", 3]]) %>
-						
+						</div> <!-- form div center-block thang-->					
+		
 						</div>
 					</div>
 				
@@ -76,7 +77,7 @@
             </div>
 					</div><!-- buy/sell button row-->
 				
-				</div> <!-- form div center-block thang-->
+				
 			  <%end%>
   			 
   		</div> <!-- col-xs-7 FORM COLUMN -->
@@ -96,27 +97,27 @@
 		
 		<div class='row'>			
 			
-			<div class='col-xs-5'>	
+			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("shrooms.jpg", width:'102', height: '102')%> 
 				</div>
 			</div>
-					
 				
-			<div class='col-xs-7'>
+				<div class='col-xs-6 form_margin'>
+				            
 				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 				
-				<div class='forms col-center-block '>
+			
 					
 					<div class='row' style='padding-top: 8px'>
 						<div class='col-xs-12'>
-						
+							<div class='forms col-center-block '>
 							<h4 class='drug_label'>
 			  				Shrooms
 			  			</h4>
 		
 							<%= f.select(:shrooms, [["1 oz $#{shroom_price}", 1], ["2 oz $#{shroom_price * 2}", 2],["3 oz $#{(shroom_price * 2.5).to_i}", 3]]) %>
-						
+							</div><!-- form div center-block thang-->
 					  </div>
 					</div>
 				
@@ -130,10 +131,10 @@
           </div>
 				</div>	<!-- buy/sell button row-->
 			
-			</div><!-- form div center-block thang-->
+			
 	  	<%end%>			
   			 
-  	</div> <!-- col-xs-7 FORM COLUMN -->
+  	</div> <!-- col-xs-6 FORM COLUMN -->
   </div> <!-- row that takes up the drug-->
 </div><!-- col-xs-11 background...the acutal column for the drug-->
 
@@ -151,27 +152,28 @@
 		
 		<div class='row'>			
 			
-			<div class='col-xs-5'>	
+			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("molly.jpg", width:'102', height: '102')%> 
 				</div>
 			</div>
 					
 				
-			<div class='col-xs-7'>
+			<div class='col-xs-6 form_margin'>
 				
 				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 				
-				<div class='forms col-center-block '>
+
 				
 					<div class='row' style='padding-top: 8px'>
 						<div class='col-xs-12'>
-						
-							<h4 class='drug_label'>
-			  				Molly
-			  			</h4>
+							<div class='forms col-center-block '>						
+								<h4 class='drug_label'>
+			  					Molly
+			  				</h4>
 		
-			       	<%= f.select(:molly, [["1 oz $#{molly_price}", 1], ["2 oz $#{molly_price * 2}", 2],["3 oz $#{(molly_price * 2.5).to_i}", 3]]) %>
+			        	<%= f.select(:molly, [["1 oz $#{molly_price}", 1], ["2 oz $#{molly_price * 2}", 2],["3 oz $#{(molly_price * 2.5).to_i}", 3]]) %>
+						  </div><!-- form div center-block thang-->
 						</div>
 					</div>
 				
@@ -184,7 +186,7 @@
             </div>
 					</div> 
 				
-				</div><!-- form div center-block thang-->
+				
 			  <%end%>				
   			 
   		</div> <!-- col-xs-7 FORM COLUMN -->
@@ -205,27 +207,28 @@
 		
 		<div class='row'>			
 			
-			<div class='col-xs-5'>	
+			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("cocaine.jpg", width:'102', height: '102')%> 
 				</div>
 			</div>
 					
 				
-			<div class='col-xs-7'>
+			<div class='col-xs-6 form_margin'>
 				
 				<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 				
-				<div class='forms col-center-block '>				
+				
 					
 					<div class='row' style='padding-top: 8px'>
 						<div class='col-xs-12'>
-					
-							<h4 class='drug_label'>
-			  				Cocaine
-			  			</h4>
+							<div class='forms col-center-block '>					
+								<h4 class='drug_label'>
+			  					Cocaine
+			  				</h4>
 		
-			        <%= f.select(:cocaine, [["1 oz $#{cocaine_price}", 1], ["2 oz $#{cocaine_price * 2}", 2],["3 oz $#{(cocaine_price * 2.5).to_i}", 3]]) %>
+			       	 <%= f.select(:cocaine, [["1 oz $#{cocaine_price}", 1], ["2 oz $#{cocaine_price * 2}", 2],["3 oz $#{(cocaine_price * 2.5).to_i}", 3]]) %>
+							</div><!-- form div center-block thang-->
 						</div>
 					</div>
 				
@@ -239,7 +242,7 @@
             </div>
 				</div>
 			
-			</div><!-- form div center-block thang-->
+			
 			<%end%>
   			 
   		</div> <!-- col-xs-7 FORM COLUMN -->
@@ -260,27 +263,28 @@
 		
 		<div class='row'>			
 			
-			<div class='col-xs-5'>	
+			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("meth.jpg", width:'102', height: '102')%> 
 				</div>
 			</div>
 					
 				
-			<div class='col-xs-7'>
+			<div class='col-xs-6 form_margin'>
 			
 			<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 			
-				<div class='forms col-center-block '>	
+					
 				
 					<div class='row' style='padding-top: 8px'>
 						<div class='col-xs-12'>
-						
+							<div class='forms col-center-block '>		
 							<h4 class='drug_label'>
 			  				Meth
 			  			</h4>
 		
 							<%= f.select(:meth, [["1 oz $#{meth_price}", 1], ["2 oz $#{meth_price * 2}", 2],["3 oz $#{(meth_price * 2.5).to_i}", 3]]) %>
+							</div><!-- form div center-block thang-->
 						</div>
 				 </div>
 				
@@ -294,7 +298,7 @@
             </div>
          </div>
 				
-			 </div><!-- form div center-block thang-->
+			 
 		<%end%>
   			 
   	</div> <!-- col-xs-7 FORM COLUMN -->
@@ -315,26 +319,27 @@
 		
 		<div class='row'>			
 			
-			<div class='col-xs-5'>	
+			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("oxy.jpg", width:'102', height: '102')%> 
 				</div>
 			</div>
 					
-			<div class='col-xs-7'>
+			<div class='col-xs-6 form_margin'>
 			
 			<%= form_for @user, html: {class: "drug_form col-center-block "} do |f| %>
 			
-				<div class='forms col-center-block '>
+				
 				
 					<div class='row' style='padding-top: 8px'>
 						<div class='col-xs-12'>
-						
+							<div class='forms col-center-block '>						
 							<h4 class='drug_label'>
 			  				Oxycontin
 			  			</h4>
 		
 				 			<%= f.select(:oxy, [["50 pills $#{oxy_price}", 1], ["100 pills $#{oxy_price * 2}", 2],["200 pills $#{(oxy_price * 3.3).to_i}", 4]]) %>
+							</div> <!-- form div center-block thang-->
 						</div>
 					</div>
 				
@@ -348,7 +353,7 @@
             </div>
 					</div>	
 
-				</div> <!-- form div center-block thang-->
+				
 			<% end %>	
 			</div> <!-- col-xs-7 FORM COLUMN -->
   </div> <!-- row that takes up the drug-->
