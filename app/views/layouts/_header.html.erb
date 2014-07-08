@@ -9,9 +9,11 @@
               <span class="icon-bar"></span>
             </button>
           <% if current_page?('/')%>
-           	<a class="navbar-brand" style="color:#999"href="/">Welcome</a>
-           <%else%>	
-           	<a class="navbar-brand" href="/"><p>Capital Underground</p></a>
+           	<a class="navbar-brand" href="/">Welcome</a>
+          <% elsif current_page?('/signup')%>
+          	<a class="navbar-brand" href="/">Capital Underground</a>
+          <%else%>	
+           	<a class="navbar-brand" href="/"><p>Cash: $<%=@user.cash%></p></a>
            <%end%>
           </div>
         <div class="navbar-collapse collapse">
@@ -28,10 +30,15 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventory <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                	<li> Cannabis: <%= current_user.weed %> ounces</li>
+          			<li class="divider"></li>
           			<li> Mushrooms: <%= current_user.shrooms %> ounces</li>
+           			<li class="divider"></li>
            			<li> Molly: <%= current_user.molly %> ounces</li>
+           			<li class="divider"></li>
            			<li> Cocaine: <%= current_user.cocaine %> ounces</li>
+           			<li class="divider"></li>
            			<li> Crystal Meth: <%= current_user.meth %> ounces</li>
+           			<li class="divider"></li>
            			<li> Oxycontin: <%= current_user.oxy %> ounces</li>
                 
                 <!--<li class="divider"></li>

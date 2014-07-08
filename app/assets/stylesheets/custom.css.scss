@@ -53,24 +53,43 @@ body {
 
 }
 
+.navbar-inverse {
+	background-color: #7e00ff;
+	border-color: #280051;
+}
+
 .navbar-header {
-	p {font-weight:500;}
+	p { font-weight:500;
+			font-size:1.38em;
+		
+		}
 	
 }
 
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #ffd0ff
+    color: white;
+		font-weight: 500;
+		font-size: 1.1em;
+		
 }
 
-.navbar-inverse .navbar-nav > li {
-    color: #ffd0ff
+.navbar-inverse .navbar-nav > li   {
+    color: white
 }
 
 
 .navbar-inverse .navbar-brand {
-    color: #f782ff;
+    color: white;
 }
+
+.dropdown-menu {
+	li { 
+		padding-left: 15px;
+		font-weight: 3400;
+		font-size: 1.0em;}
+}
+
 
 /*##########################################*/
 
