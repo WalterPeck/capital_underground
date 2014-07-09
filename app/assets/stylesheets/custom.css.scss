@@ -70,7 +70,7 @@ body {
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 		font-weight: 500;
-		font-size: 1.1em;
+		font-size: 1.2em;
 		
 }
 
@@ -83,11 +83,20 @@ body {
     color: white;
 }
 
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: white;
+}
+
+
 .dropdown-menu {
 	li { 
+	
 		padding-left: 15px;
 		font-weight: 3400;
 		font-size: 1.0em;}
+	a {
+		color: white;
+	}
 }
 
 
@@ -256,6 +265,12 @@ footer {
  		border-radius: 40px;
  	  margin-bottom: 15px;
  }
+ 
+  .background_yellow {
+ 		background: #e0aeff;
+ 		border-radius: 40px;
+ 	  margin-bottom: 15px;
+ }
 
 
 
@@ -389,7 +404,7 @@ input, select, textarea{
 	
 
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.73);
-  font-size: 3em;
+  font-size: 2.8em;
   letter-spacing: -2px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -433,6 +448,15 @@ input, select, textarea{
 	background-size: cover;
 }
 
+.schen {
+	background: image-url("Schen.jpg") no-repeat center center; 
+	background-size: cover;
+}
+
+.cp {
+	background: image-url("CP.jpg") no-repeat center center; 
+	background-size: cover;
+}
 
 img {
           display: block;

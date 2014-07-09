@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	@@cocaine = 0
 	@@meth = 0
 	@@oxy = 0
+	@@police = 0 
 ############################
   
   has_secure_password
@@ -47,13 +48,17 @@ class User < ActiveRecord::Base
   
 ########################################################################   
 ########################################################################   
-############ YOU ARE HERE NIGGER GUY ######################  
+############ POlice METERS AND SUCH ######################  
    
-  
+  def police
+  	@@police
+  end
 
   
 
-  
+
+########################################################################   
+########################################################################   
   
   def switchen(x) # TEST TO SEE IF THE CONTROLLER CAN CHANGE VARIABLES IN HERE AND THEY REMAIN CONSTANT
   	@@switch = x	
@@ -137,24 +142,45 @@ class User < ActiveRecord::Base
 	#it up alot and make the app faster. As well as preventing drug prices
 	#refreshing everytime the user refeshes his page.
 	def albz
-		
-		@@weed = (230..300).to_a.sample #weed is always a good deal in albany
-		@@molly = (600..800).to_a.sample
-		@@shrooms = (150..300).to_a.sample
+		@@police = (25..60).to_a.sample 
+		@@weed = (230..350).to_a.sample #weed is always a good deal in albany
+		@@shrooms = (150..320).to_a.sample
+		@@molly = (600..900).to_a.sample
 		@@cocaine = (1000..1500).to_a.sample
 		@@meth = (550..2000).to_a.sample
-		@@oxy = (1500..3000).to_a.sample
+		@@oxy = (1000..2000).to_a.sample #cheap oxy because of the hospitals
   
   end
   
   def troy
-
+    @@police = (30..75).to_a.sample 
   	@@weed = (230..380).to_a.sample #raised the high range to 380 because of rpi students
-		@@molly = (300..600).to_a.sample #lower molly because troy...more scumbags than party students
-		@@shrooms = (150..300).to_a.sample
+		@@shrooms = (180..370).to_a.sample
+		@@molly = (600..850).to_a.sample #lower molly because troy...more scumbags than party students
+		@@cocaine = (970..1500).to_a.sample #bigger range on coke
+		@@meth = (550..1300).to_a.sample # meth high range is much lower....more meth heads
+		@@oxy = (1300..2500).to_a.sample # tweaked the oxy range cuz i dunno  	
+  end
+	
+	def schen
+    @@police = (35..80).to_a.sample 
+  	@@weed = (200..400).to_a.sample #raised the high range to 380 because of rpi students
+		@@shrooms = (200..400).to_a.sample
+		@@molly = (400..800).to_a.sample #smaller range for molly
 		@@cocaine = (800..1500).to_a.sample #bigger range on coke
-		@@meth = (550..1000).to_a.sample # meth high range is much lower....more meth heads
-		@@oxy = (1200..2500).to_a.sample # tweaked the oxy range cuz i dunno  	
+		@@meth = (700..1800).to_a.sample # meth high range is much lower....more meth heads
+		@@oxy = (1500..2500).to_a.sample # 	
+  end
+	
+	
+	def cp
+    @@police = (60..95).to_a.sample 
+  	@@weed = (280..500).to_a.sample #raised the high range to 380 because of rpi students
+		@@shrooms = (240..500).to_a.sample
+		@@molly = (700..1000).to_a.sample #smaller range for molly
+	  @@cocaine = (1000..1800).to_a.sample #bigger range on coke
+		@@meth = (700..1700).to_a.sample # meth high range is much lower....more meth heads
+		@@oxy = (1500..3000).to_a.sample # 	
   end
 	
 	def money(drug)

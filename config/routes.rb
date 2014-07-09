@@ -9,10 +9,10 @@ CapitalUnderground::Application.routes.draw do
  	match 'user/albany/:id', to: 'users#albany', :as => :albany_users, via: 'get'
   match 'user/troy/:id',   to: 'users#troy',   :as => :troy_users,   via: 'get'
   match 'user/schen/:id',  to: 'users#schen',  :as => :schen_users,  via: 'get'
+  match 'user/cp/:id',  to: 'users#cp',  :as => :cp_users,  via: 'get'
   match '/signup',  to: 'users#new',					 via: 'get'			
   match '/signin',  to: 'sessions#new', 			 via: 'get'
   match '/signout', to: 'sessions#destroy',		 via: 'delete'
-  match '/schen',   to: 'static_pages#schen',	 via: 'get'
   match '/help',    to: 'static_pages#help',   via: 'get'
   match '/about',   to: 'static_pages#about',  via: 'get'
  	

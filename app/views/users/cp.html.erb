@@ -1,10 +1,6 @@
 <% provide(:title, @user.dealer) %>
 
-<!-- There is alot of repeated cash process's see if you really need all of them -->
 
-
-		
-		
 <!--         This is just the  prices of drugs we set to variables
 	################################################################################	-->
 		<% weed_price = @user.weed_price%>
@@ -15,19 +11,16 @@
 		
 		<% oxy_price = @user.oxy_price %>
 		
-<div class="jumbotron city albany">
+<div class="jumbotron city cp">
         
-        <h1 class="title">Albany</h1>
+        <h1 class="title">Clifton Park</h1>
     		 <br><br>
    
    			
    			
-</div> 
-
-
-<div class="row ">
-
-
+</div>
+		
+<div class="row">
 
 <!-- ################################################################### 
     												POLICE
@@ -54,13 +47,13 @@
 	
 </div>
 
-		
 <!-- ################################################################### 
     												WEEED
     ###################################################################-->
 
 
 
+		
 <% if weed_price > 330 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
@@ -172,7 +165,7 @@
 		
 
 		
-<% if molly_price > 800 %>
+<% if molly_price > 750 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
 	<div class="col-xs-11 col-md-4 col-center-block background ">

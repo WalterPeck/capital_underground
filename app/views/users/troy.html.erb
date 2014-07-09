@@ -27,13 +27,38 @@
 <div class="row">
 
 <!-- ################################################################### 
+    												POLICE
+    ###################################################################-->
+
+<div class="col-xs-11 col-md-4 col-center-block">
+	<h4>Police</h4>
+	<%if @user.police >= 66%>
+		<div class="progress">
+ 			<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%=@user.police%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=@user.police%>%">
+  <%elsif @user.police >= 45%>
+  		<div class="progress">
+ 				<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%=@user.police%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=@user.police%>%">
+  <%elsif @user.police >= 1%>
+  		<div class="progress">
+ 		 		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%=@user.police%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=@user.police%>%">
+  <%else%>
+  	<p>error</p>
+  <%end%>
+  
+  
+ 				</div>
+			</div>
+	
+</div>
+
+<!-- ################################################################### 
     												WEEED
     ###################################################################-->
 
 
 
 		
-<% if weed_price > 300 %>
+<% if weed_price > 330 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
 	<div class="col-xs-11 col-md-4 col-center-block background ">
@@ -89,7 +114,7 @@
 		
 
 		
-<% if shroom_price > 275 %>
+<% if shroom_price > 300 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
 	<div class="col-xs-11 col-md-4 col-center-block background ">
@@ -144,7 +169,7 @@
 		
 
 		
-<% if molly_price > 675 %>
+<% if molly_price > 800 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
 	<div class="col-xs-11 col-md-4 col-center-block background ">
@@ -199,7 +224,7 @@
 		
 
 		
-<% if cocaine_price > 1300 %>
+<% if cocaine_price > 1400 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
 	<div class="col-xs-11 col-md-4 col-center-block background ">
@@ -255,7 +280,7 @@
 		
 
 		
-<% if meth_price > 1500 %>
+<% if meth_price > 1400 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
 	<div class="col-xs-11 col-md-4 col-center-block background ">
@@ -311,7 +336,7 @@
 		
 
 		
-<% if oxy_price > 2500 %>
+<% if oxy_price > 2200 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
 	<div class="col-xs-11 col-md-4 col-center-block background ">

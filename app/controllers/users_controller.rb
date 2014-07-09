@@ -6,6 +6,44 @@
 	
 	
 	
+	def cp
+		current_user
+	
+
+		
+		if @user.switch != 'cp'
+			@user.cp
+		else
+			nil
+		end	
+		
+		@first_time =  @user.switch
+		@user.switchen('cp') 			#THIS MEANS THAT I CAN CAUSE A VARIABLE CHANGE IN THE CLASS...
+    @second_time = @user.switch
+	
+	end
+	
+	
+	
+	
+	def schen
+		current_user
+	
+
+		
+		if @user.switch != 'schen'
+			@user.schen
+		else
+			nil
+		end	
+		
+		@first_time =  @user.switch
+		@user.switchen('schen') 			#THIS MEANS THAT I CAN CAUSE A VARIABLE CHANGE IN THE CLASS...
+    @second_time = @user.switch
+	
+	end
+	
+	
 	
 	def troy
 		 current_user #this is from the sessions helper, take a look
@@ -180,13 +218,21 @@
 
 
 
- if @user.switch == 'albany'
+ if @user.switch == 'albany'  #this redirects the page back to troy once a drug has been purchased
  	    flashin
 		 	redirect_to :back
  
   	elsif @user.switch == 'troy'
   	  flashin
-  		redirect_to :back #this redirects the page back to troy once a drug has been purchased
+  		redirect_to :back 
+		
+		elsif @user.switch == 'schen'
+  	  flashin
+  		redirect_to :back
+  	elsif @user.switch == 'cp'
+  	  flashin
+  		redirect_to :back	
+		
 		else
 		 
 		 redirect_to @user

@@ -10,11 +10,7 @@ module ApplicationHelper
 	end
 
 
-	def travel
-		if current_user.switch == 'troy'
-			'<li> HEY </li>'
-		end
-	end
+
 end
 
 
