@@ -12,6 +12,8 @@
            	<a class="navbar-brand" href="/">Welcome</a>
           <% elsif current_page?('/signup')%>
           	<a class="navbar-brand" href="/">Capital Underground</a>
+          <% elsif current_page?('/help')%> <!--This is for the education thing-->
+          	<p class="navbar-brand" href="/">Y</p>
           <%else%>	
            	<a class="navbar-brand" href="/"><p>Cash: $<%=@user.cash%></p></a>
            <%end%>

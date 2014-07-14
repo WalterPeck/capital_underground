@@ -1,5 +1,60 @@
 <% provide(:title, 'Help') %>
 
+<%letter = 'Y'%>	
 
-<h1>Help</h1>
+<%btn_1 = letter%>
+<%btn_2 = alphabet%>	
+<%btn_3 = alphabet%>	
+<%btn_4 = alphabet%>	
+<%btn_5 = alphabet%>	
+<%btn_6 = alphabet%>	
 
+<%button_array = [btn_1, btn_2, btn_3, btn_4, btn_5, btn_6].shuffle%>
+
+
+
+<div class='row edu'>
+	<div class='col-xs-12 center'>
+
+		<h1>Find Y</h1>
+		<%if button_array[0] == 'Y'%>
+			<button type="button" class="btn btn-default btn-circle btn-xl" data-toggle="button" ><p><%=button_array[0]%></p></button>
+		<%else%>
+			<button type="button" class="btn btn-default btn-circle btn-xl"><p><%=button_array[0]%></p></button>
+		<%end%>
+		
+		<%if button_array[1] == 'Y'%>
+			<button type="button" class="btn btn-default btn-circle btn-xl" data-toggle="button" ><p><%=button_array[1]%></p></button>
+		<%else%>
+			<button type="button" class="btn btn-default btn-circle btn-xl"><p><%=button_array[1]%></p></button>
+		<%end%>
+		
+		<%if button_array[2] == 'Y'%>
+			<button type="button" class="btn btn-default btn-circle btn-xl" data-toggle="button" ><p><%=button_array[2]%></p></button>
+		<%else%>
+			<button type="button" class="btn btn-default btn-circle btn-xl"><p><%=button_array[2]%></p></button>
+		<%end%>
+		
+		<%if button_array[3] == 'Y'%>
+			<button type="button" class="btn btn-default btn-circle btn-xl" data-toggle="button" ><p><%=button_array[3]%></p></button>
+		<%else%>
+			<button type="button" class="btn btn-default btn-circle btn-xl"><p><%=button_array[3]%></p></button>
+		<%end%>
+		
+		<%if button_array[4] == 'Y'%>
+			<button type="button" class="btn btn-default btn-circle btn-xl" data-toggle="button" ><p><%=button_array[4]%></p></button>
+		<%else%>
+			<button type="button" class="btn btn-default btn-circle btn-xl"><p><%=button_array[4]%></p></button>
+		<%end%>
+		
+		<%if button_array[5] == 'Y'%>
+			<button type="button" class="btn btn-default btn-circle btn-xl" data-toggle="button" ><p><%=button_array[5]%></p></button>
+		<%else%>
+			<button type="button" class="btn btn-default btn-circle btn-xl"><p><%=button_array[5]%></p></button>
+		<%end%>
+		
+	</div>
+	
+
+
+</div>

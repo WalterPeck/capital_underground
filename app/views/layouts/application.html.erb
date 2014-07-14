@@ -14,11 +14,16 @@
     <%= csrf_meta_tags %>
     
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="animate.min.css">
     
   </head>
+  
   <body>
- 		 <%= render 'layouts/header' %>
+ 		 <%if current_page?('/help')%>
+ 		 		<%nil%>
+ 		 <%else%>
+ 		 		<%= render 'layouts/header' %>
+    	<%end%>
     <div class="container">
       
       <% flash.each do |key, value| %>

@@ -8,7 +8,6 @@
 		<% molly_price = @user.molly_price%>
 		<% cocaine_price = @user.cocaine_price%>
 		<% meth_price = @user.meth_price%>
-		
 		<% oxy_price = @user.oxy_price %>
 		
 <div class="jumbotron city cp">
@@ -53,7 +52,6 @@
 
 
 
-		
 <% if weed_price > 330 %>
 	<div class="col-xs-11 col-md-4 col-center-block background_red ">
 <%else%>
@@ -65,7 +63,17 @@
 			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("weed.jpg", width:'102', height: '102')%> 
+			
+			<%if @user.weed > 0 %>
+				<div class='col'>
+					<div class='col-xs-3'>
+						<p><%=@user.weed%></p>
+					</div>
 				</div>
+			<%else%>
+				<%nil%>
+			<%end%>	
+				</div> <!--activity rounded-->
 			</div>
 					
 				
@@ -121,6 +129,16 @@
 			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("shrooms.jpg", width:'102', height: '102')%> 
+					
+					<%if @user.shrooms > 0 %>
+						<div class='col'>
+							<div class='col-xs-3'>
+								<p><%=@user.shrooms%></p>
+							</div>
+						</div>
+					<%else%>
+						<%nil%>
+					<%end%>	
 				</div>
 			</div>
 				
@@ -176,6 +194,16 @@
 			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("molly.jpg", width:'102', height: '102')%> 
+					<%if @user.molly > 0 %>
+						<div class='col'>
+							<div class='col-xs-3'>
+								<p><%=@user.molly%></p>
+							</div>
+						</div>
+					<%else%>
+						<%nil%>
+					<%end%>
+				
 				</div>
 			</div>
 					
@@ -231,6 +259,16 @@
 			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("cocaine.jpg", width:'102', height: '102')%> 
+					<%if @user.cocaine > 0 %>
+						<div class='col'>
+							<div class='col-xs-3'>
+								<p><%=@user.cocaine%></p>
+							</div>
+						</div>
+					<%else%>
+						<%nil%>
+					<%end%>
+					
 				</div>
 			</div>
 					
@@ -287,6 +325,15 @@
 			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("meth.jpg", width:'102', height: '102')%> 
+					<%if @user.meth > 0 %>
+						<div class='col'>
+							<div class='col-xs-3'>
+								<p><%=@user.meth%></p>
+							</div>
+						</div>
+					<%else%>
+						<%nil%>
+					<%end%>
 				</div>
 			</div>
 					
@@ -343,6 +390,17 @@
 			<div class='col-xs-6'>	
 				<div class='activity_rounded'>
 					<%=image_tag("oxy.jpg", width:'102', height: '102')%> 
+					
+					<%if @user.oxy > 0 %>
+						<div class='col'>
+							<div class='col-xs-3'>
+								<p><%=(@user.oxy * 50)%></p>
+							</div>
+						</div>
+					<%else%>
+						<%nil%>
+					<%end%>
+				
 				</div>
 			</div>
 					
