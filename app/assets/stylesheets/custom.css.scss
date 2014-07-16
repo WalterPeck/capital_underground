@@ -489,11 +489,11 @@ img {
 }
 
 .edu {
-	h1 {color: white}
+h1 {color: white}
 }
 
 .edu_col {
-	padding-left: 18px;
+padding-left: 18px;
 }
 
 .btn-circle.btn-xl {
@@ -504,17 +504,44 @@ img {
   font-size: 3.5em;
   text-align:center;
   border-radius: 50px;
-	margin: 12px;
-  box-shadow: 0 5px 0 gray;
-  transition: all .07s  linear; 
+margin: 12px;
 }
 
+.btn-letter.active {
+background-color: #39e78d;
+border-width:4px;
+border-color: white;
 
-.btn-circle.btn-xl:active {
-	color: white;
-	background: #39e78d; 
-	box-shadow: 0 2px 0 gray;
-	text-shadow: 0px 0px 3px rgba(255, 0, 0, 1);
-	transform: translateY(3px);
 }
 
+.btn-circle.btn-xl.active {
+color: white;
+
+}
+
+.btn-default:hover {
+    color: #333;
+    background-color: #fff;
+    text-shadow: 0px 0px 3px rgba(255, 0, 0, 1);
+    
+    border-color: red;
+border-width: 1.7px
+}
+
+.butt {
+
+}
+
+.disabled {
+	background-color: red;
+	border-width:4px;
+  border-color: white;
+}
+
+.btn.disabled {
+	opacity: 1;
+} 
+
+.btn-circle.btn-xl.disabled {
+	color: white ;
+}

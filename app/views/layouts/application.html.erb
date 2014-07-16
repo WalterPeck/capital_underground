@@ -38,6 +38,17 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
   <!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> /> -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
+  <script type="text/javascript">  
+$(function() { 
+    $(".butt").click(function(){
+        $(this).button('loading').delay(1000).queue(function() {
+            $(this).button('reset');
+            $(this).dequeue();
+        });        
+    });
+});   
+</script>
+  
+  
   </body>
 </html>

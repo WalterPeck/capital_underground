@@ -20,7 +20,12 @@
 		<%if button_array[0] == 'Y'%>
 			<button type="button" class="btn btn-letter btn-circle btn-xl" data-toggle="button" ><p><%=button_array[0]%></p></button>
 		<%else%>
-			<button type="button" class="btn btn-default btn-circle btn-xl"><p><%=button_array[0]%></p></button>
+			
+
+    <button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[0]%>><%=button_array[0]%></button>
+
+
+		
 		<%end%>
 		
 		<%if button_array[1] == 'Y'%>
