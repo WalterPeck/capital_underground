@@ -491,8 +491,10 @@ img {
 
 .edu {
 h1 {font-size:3em;color: #d3cbfe;}
-
+h2 {font-size:2.8em;color:black;}
 }
+
+
 
 .edu_col {
 padding-left: 18px;
@@ -518,7 +520,7 @@ border-color: white;
 
 .btn-circle.btn-xl.active {
 color: white;
-
+text-shadow: rgb(255, 255, 255) 0px 0px 80px;
 }
 
 /*.btn-default:hover {
@@ -538,6 +540,10 @@ border-width: 1.7px
 	background-color: #fe212e;
 	border-width:4px;
   border-color: white;
+	-webkit-box-shadow: 3px 3px 30px 0px rgba(255, 41, 110, 1);
+-moz-box-shadow:    3px 3px 30px 0px rgba(255, 41, 110, 1);
+box-shadow:         3px 3px 30px 0px rgba(255, 41, 110, 1);
+
 }
 
 .btn.disabled {
@@ -546,5 +552,10 @@ border-width: 1.7px
 
 .btn-circle.btn-xl.disabled {
 	color: white ;
+	text-shadow: rgb(255, 255, 255) 0px 0px 17px;
 }
 
+#test {
+	display: none;
+  margin-bottom: -130px;
+}

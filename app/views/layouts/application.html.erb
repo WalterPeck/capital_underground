@@ -16,10 +16,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="animate.min.css">
     
+    
+   
+
+    
+    
+    
   </head>
   
   <body>
- 		 <%if current_page?('/help')%>
+ 		 <%if current_page?('/help') or current_page?('/about')%>
  		 		<%nil%>
  		 <%else%>
  		 		<%= render 'layouts/header' %>
@@ -35,17 +41,39 @@
     </div>
    
    <!-- SOME SWEET JAVA for the navbar -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-  <!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> /> -->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+  
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  	
+ <!-- 	<script src="//cdn.jsdelivr.net/jquery.velocity/0.8.0/jquery.velocity.min.js"></script> -->
+
+		  <script>
+			$(document).ready(function(){
+  		
+  		
+  			$("#staranime").click(function(){
+   		 
+   		  	$("#test").velocity("transition.bounceRightIn",500 );
+  				$("#test").velocity("callout.shake",400, [.3,.31,.58,1.65]);
+  			});
+			});
+</script>
+
+  
+  
+ <!--   This is for the letter game page...it works but probably isnt as fast
+ 				as it can be because it uses css animation -->  
   <script type="text/javascript">  
-$(function() { 
+$(document).ready(function() { 
     $(".butt").click(function(){
         $(this).button('loading').delay(1000).queue(function() {
             $(this).button('reset');
             $(this).dequeue();
         });        
     });
+	
+
 });   
 </script>
   
