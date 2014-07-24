@@ -1,5 +1,18 @@
 <% provide(:title, 'Score')%>
 
+<%letter = 'Y'%>	
+
+<%btn_1 = letter%>
+<%btn_2 = alphabet%>	
+<%btn_3 = alphabet%>	
+<%btn_4 = alphabet%>	
+<%btn_5 = alphabet%>	
+<%btn_6 = alphabet%>	
+
+<%button_array = [btn_1, btn_2, btn_3, btn_4, btn_5, btn_6].shuffle%>
+
+
+
 <div class='row edu'>
 	
 	<div class='col-xs-12 center' style="padding-top:20px">
@@ -17,15 +30,45 @@
 
 		<h2>This is a heading</h2>
 		<p>This is a paragraph.</p>
-
+    <p id="nigger"></p>
 		
 
 
-		<button id="buttonhide">Click me</button>
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="wrongbutton"  onclick="wrong()" data-loading-text=<%=button_array[1]%>><%=button_array[1]%></button>
+	</div>
+
+	<div class='col-xs-4 center' id='nigger' style='height: 100px; width:100px;'>
+	</div>
+
 </div>
 
 
+<script>
+function wrong() {
+    var x = document.getElementById("wrongbutton");
+    x.style.color = "white"; 
+		x.style.backgroundColor= "#fe212e";
+	  x.style.borderWidth="thick";
+	  x.style.borderColor= "#fff";
+		
+		
+}
 
-</div>
+</script>
 
+
+
+
+
+ <script>
+			$(document).ready(function(){
+  		
+  		
+  			$("#wrongbutton").click(function(){
+   		    
+   		    $("#test").velocity("transition.bounceRightIn",700 );
+  				$("#test").velocity("callout.shake",600, [.3,.31,.58,1.65]);
+  			});
+			});
+</script>
 
