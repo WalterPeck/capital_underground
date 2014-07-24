@@ -15,3 +15,4 @@
 //= require jquery_ujs
 //= require jquery.velocity
 //= require velocity.ui
+//= require fastclick
