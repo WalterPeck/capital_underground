@@ -48,17 +48,35 @@
   	
  <!-- 	<script src="//cdn.jsdelivr.net/jquery.velocity/0.8.0/jquery.velocity.min.js"></script> -->
 
-		  <script>
+		<script>
 			$(document).ready(function(){
   		
+  		  $(".butt").click(function(){
+        	$(this).button('loading').delay(1000).queue(function() {
+            $(this).button('reset');
+            $(this).dequeue();
+        	});        
+    		});
+  		  
   		
+  			
+  			
   			$("#staranime").click(function(){
    		 
-   		  	$("#test").velocity("transition.bounceRightIn",700 );
-  				$("#test").velocity("callout.shake",600, [.3,.31,.58,1.65]);
+   		  	$("#star1").velocity("transition.bounceRightIn",700 );
+  				$("#star1").velocity("callout.shake",600, [.3,.31,.58,1.65]);
   			});
+	      
+	      	$("#staranime2").click(function(){
+   		 
+   		  	$("#star2").velocity("transition.bounceRightIn",700 );
+  				$("#star2").velocity("callout.shake",600, [.3,.31,.58,1.65]);
+  			});
+			 
 			});
-</script>
+		</script>
+
+		<script>
 
 
 
@@ -79,18 +97,7 @@ window.addEventListener('load', function() {
 -->  
 
  
- <script type="text/javascript">  
-$(document).ready(function() { 
-    $(".butt").click(function(){
-        $(this).button('loading').delay(1000).queue(function() {
-            $(this).button('reset');
-            $(this).dequeue();
-        });        
-    });
-	
 
-});   
-</script>
   
   
   </body>
