@@ -40,7 +40,7 @@
     
     </div>
    
-   <!-- SOME SWEET JAVA for the navbar -->
+ 
 
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
   
@@ -60,11 +60,26 @@
 			});
 </script>
 
-  
-  
- <!--   This is for the letter game page...it works but probably isnt as fast
- 				as it can be because it uses css animation -->  
-  <script type="text/javascript">  
+
+
+<script>
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+</script>
+
+
+
+
+
+<!--   This is for the letter game page...it works but probably isnt as fast
+ 				as it can be because it uses css animation 
+ 				
+ 				the delay is for the stop reset thing to wait a second
+-->  
+
+ 
+ <script type="text/javascript">  
 $(document).ready(function() { 
     $(".butt").click(function(){
         $(this).button('loading').delay(1000).queue(function() {
