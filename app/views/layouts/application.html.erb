@@ -48,6 +48,18 @@
   	
  <!-- 	<script src="//cdn.jsdelivr.net/jquery.velocity/0.8.0/jquery.velocity.min.js"></script> -->
 
+		
+		
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id='smileModal'>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content text-center">
+      <%=image_tag("http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/1024px-Smiley.svg.png", height:'200px', width:'200px', id:'smiley')%>
+    	<a type="button" class="btn btn-primary btn-lg" id="next" href="about">Next Level</a>
+    </div>
+  </div>
+</div>
+		
+		
 		<script>
 			$(document).ready(function(){
   		
@@ -63,9 +75,12 @@
   			
   			$("#staranime").click(function(){
    		 
-   		  	$("#star1").velocity("transition.bounceRightIn",700 );
-  				$("#star1").velocity("callout.shake",600);
-  			});
+   		  $("#star1").velocity("transition.bounceRightIn",700 );
+  			$("#star1").velocity("callout.shake",600);
+				setTimeout(function() {
+				$('#smileModal').modal('show')
+  			}, 1000);	
+  		});
 	      
 	      $("#staranime2").click(function(){
    		 
