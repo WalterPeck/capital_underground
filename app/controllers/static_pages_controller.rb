@@ -9,9 +9,11 @@ class StaticPagesController < ApplicationController
   def help
   end
 
+  def first
+  end
   
-  
-  
+  def about
+  end
 	
 	def score
 	end

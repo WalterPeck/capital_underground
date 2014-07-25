@@ -1,74 +1,124 @@
-<% provide(:title, 'Score')%>
+<% provide(:title, 'Help') %>
 
-<%letter = 'Y'%>	
+<%letter = alphabet%>	
+<%@lt1= false%>
+<%@lt2= false%>
+
+
 
 <%btn_1 = letter%>
-<%btn_2 = new_letter(letter)%>	
-<%btn_3 = new_letter(letter)%>	
+<%btn_2 = letter%>	
+<%btn_3 = letter%>	
 <%btn_4 = new_letter(letter)%>	
 <%btn_5 = new_letter(letter)%>	
-<%btn_6 = new_letter(letter)%>	
-
-<%button_array = [btn_1, btn_2, btn_3, btn_4, btn_5, btn_6].shuffle%>
-
-
-
-<div class='row edu'>
-	
-	<div class='col-xs-12 center' style="padding-top:20px">
-			<!--<div id="test" style="background:#98bf21;height:100px;width:100px;position:absolute;"> -->
-			<%=image_tag("star.png", width:'102', height: '102', id:'test')%> 
-			
-	
-	<p id="fart" style="margin-top:100px">BOOBY!</p>
-</div>
-</div>
-	
-	<div class='col-xs-12 center'>
+<%btn_6 = new_letter(letter)%>
+<%btn_7 = new_letter(letter)%>
+<%btn_8 = new_letter(letter)%>
+<%btn_9 = new_letter(letter)%>
 
 
-
-		<h2>This is a heading</h2>
-		<p>This is a paragraph.</p>
-    <p id="nigger"></p>
-		
-
-
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="wrongbutton"  onclick="wrong()" data-loading-text=<%=button_array[1]%>><%=button_array[1]%></button>
-	</div>
-
-	<div class='col-xs-4 center' id='nigger' style='height: 100px; width:100px;'>
-	</div>
-
-</div>
-
+<%button_array = [btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9].shuffle%>
 
 <script>
-function wrong() {
-    var x = document.getElementById("wrongbutton");
+function lightitup() {
+    var x = document.getElementById("muteletters");
+    x.style.fontsize = "2.8em";           
     x.style.color = "white"; 
-		x.style.backgroundColor= "#fe212e";
-	  x.style.borderWidth="thick";
-	  x.style.borderColor= "#fff";
-		
-		
+		x.style.textShadow = "rgb(255, 255, 255) 0px 0px 17px"
+	
 }
-
-</script>
-
+</script> 
 
 
 
 
- <script>
-			$(document).ready(function(){
-  		
-  		
-  			$("#wrongbutton").click(function(){
-   		    
-   		    $("#test").velocity("transition.bounceRightIn",700 );
-  				$("#test").velocity("callout.shake",600, [.3,.31,.58,1.65]);
-  			});
-			});
-</script>
 
+
+<div class='row' style="height:58px"> <!--this prevents from the rows getting shifted down the page when the star appears-->
+
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star1')%>
+	</div>
+
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star2')%>
+	</div>
+	
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star3')%>
+	</div>
+
+</div>
+
+<div class='row edu'>	
+	<div class='col-xs-12 center' style="margin-top:0px">	
+		<h1>Where is <%=letter%> ?</h1>
+
+
+		<%if button_array[0] == letter%> <!--I dont need the exta script here-->
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[0]%></button>
+			 
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[0]%>><%=button_array[0]%></button>
+		<%end%> 
+
+		<%if button_array[1] == letter %>
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[1]%></button>
+	  	
+	  <%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[1]%>><%=button_array[1]%></button>
+		<%end%>
+
+		<%if button_array[2] == letter%>
+			
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button" ><%=button_array[2]%></button>
+	
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[2]%>><%=button_array[2]%></button>
+		<%end%>
+
+		<%if button_array[3] == letter%>
+		
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[3]%></button>
+	
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[3]%>><%=button_array[3]%></button>
+		<%end%>
+
+		<%if button_array[4] == letter%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[4]%></button>
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[4]%>><%=button_array[4]%></button>
+		<%end%>
+
+		<%if button_array[5] == letter%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[5]%></button>
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[5]%>><%=button_array[5]%></button>
+		<%end%>
+		
+		
+
+		<%if button_array[6] == letter%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[6]%></button>
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[6]%>><%=button_array[6]%></button>
+		<%end%>
+		
+		<%if button_array[7] == letter%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[7]%></button>
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[7]%>><%=button_array[7]%></button>
+		<%end%>
+		
+		<%if button_array[8] == letter%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[8]%></button>
+		<%else%>
+			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[8]%>><%=button_array[8]%></button>
+		<%end%>
+
+
+</div>
+
+
+</div>
