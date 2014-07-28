@@ -54,10 +54,10 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content text-center">
       <%=image_tag("http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/1024px-Smiley.svg.png", height:'200px', width:'200px', id:'smiley')%>
-    	<a type="button" class="btn btn-primary btn-lg" id="next" href="<%=level%>">Next Level</a>
+    	<button type="button" class="btn btn-primary btn-lg" id="next">Next Level</button>
     </div>
   </div>
-</div>
+</div> 
 		
 		
 		<script>
@@ -85,8 +85,9 @@
   		    if (<%=@level%> == 1) { 
   		  		setTimeout(function() {
 						$('#smileModal').modal('show')
+  					$("#smiley").velocity("callout.bounce",1450)
   					}, 1350);	
-  		  
+  		  		
   		    }
   		  
   		  }
@@ -100,6 +101,7 @@
 		  	  if (<%=@level%> == 2) { 
   		  		setTimeout(function() {
 						$('#smileModal').modal('show')
+  					$("#smiley").velocity("callout.bounce",1450)
   					}, 1350);	
   		  
   		    }
@@ -116,20 +118,26 @@
 		  	  if (<%=@level%> == 3) { 
   		  		setTimeout(function() {
 						$('#smileModal').modal('show')
+  					$("#smiley").velocity("callout.bounce",1450)
   					}, 1350);	
-  		    
+  		    	
+     		
+     				
   		    }
 		  	
 		  	
 		  	}		
   		});			
   	
-   
-     	$("#next").click(function(){
-     		
-     		$('#smiley').callout.pulse()
-     		
-     	});  
+     $("#next").click(function(){
+	  	$("#smiley").velocity("callout.bounce",800);
+	    
+	  setTimeout(function() {
+	    window.location.replace("/<%=level%>");
+			}, 500);
+	  
+	  });
+    
    
    
    
@@ -138,6 +146,7 @@
 		</script>
 
 		
+
 
 
 
