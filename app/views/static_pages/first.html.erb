@@ -3,6 +3,7 @@
 <%letter = alphabet%>	
 <%@lt1= false%>
 <%@lt2= false%>
+<%@level = 1%>
 
 
 
@@ -14,43 +15,42 @@
 
 <div class='row' style="height:58px"> <!--this prevents from the rows getting shifted down the page when the star appears-->
 
-	<div class='col-xs-12 center'>
+	<div class='col-xs-4 center'>
 		<%=image_tag("star.png", width:'50', height: '50', id:'star1')%>
+	</div>
+
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star2')%>
+	</div>
+	
+	<div class='col-xs-4 center'>
+		<%=image_tag("star.png", width:'50', height: '50', id:'star3')%>
 	</div>
 
 </div>
 
 <div class='row edu'>	
-	
-	<!--<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>  THIS WAS TO TOGGLE THE MODAL -->
-
-
-	
-	
-	<div class='col-xs-12 center'>	
+	<div class='col-xs-12 center' style="margin-top:0px">	
 		<h1>Where is <%=letter%> ?</h1>
-	</div>
-	
-	<div class='col-xs-12 center'>	
+
+
 		<%if button_array[0] == letter%> <!--I dont need the exta script here-->
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[0]%></button>
-		<%else%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[0]%></button>
+		
+		<%else%> 
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[0]%>><%=button_array[0]%></button>
 		<%end%> 
-	</div>	
-		
-	<div class='col-xs-12 center'>		
+
 		<%if button_array[1] == letter %>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[1]%></button>
-	  	
+			
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[1]%></button>
 	  <%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[1]%>><%=button_array[1]%></button>
 		<%end%>
-	</div>	
-	
-	<div class='col-xs-12 center'>		
+
 		<%if button_array[2] == letter%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button" ><%=button_array[2]%></button>
+			
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button" ><%=button_array[2]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[2]%>><%=button_array[2]%></button>
 		<%end%>

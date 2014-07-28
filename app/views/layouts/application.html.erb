@@ -50,11 +50,11 @@
 
 		
 		
-		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id='smileModal'>
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="smileModal" data-backdrop="static" >
   <div class="modal-dialog modal-sm">
     <div class="modal-content text-center">
       <%=image_tag("http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/1024px-Smiley.svg.png", height:'200px', width:'200px', id:'smiley')%>
-    	<a type="button" class="btn btn-primary btn-lg" id="next" href="about">Next Level</a>
+    	<a type="button" class="btn btn-primary btn-lg" id="next" href="<%=level%>">Next Level</a>
     </div>
   </div>
 </div>
@@ -63,6 +63,8 @@
 		<script>
 			$(document).ready(function(){
   		
+  		  var currentButton = 0
+  		  
   		  $(".butt").click(function(){
         	$(this).button('loading').delay(1000).queue(function() {
             $(this).button('reset');
@@ -70,33 +72,69 @@
         	});        
     		});
   		  
-  		
-  			
-  			
-  			$("#staranime").click(function(){
+  		 
+  	$(".correct").click(function(){
    		 
-   		  $("#star1").velocity("transition.bounceRightIn",700 );
-  			$("#star1").velocity("callout.shake",600);
-				setTimeout(function() {
-				$('#smileModal').modal('show')
-  			}, 1000);	
-  		});
-	      
-	      $("#staranime2").click(function(){
+   		 currentButton = currentButton + 1
    		 
-   		  	$("#star2").velocity("transition.bounceRightIn",700 );
+   		 if (currentButton == 1) { 
+   		  	
+   		  	$("#star1").velocity("transition.bounceRightIn",700 );
+  				$("#star1").velocity("callout.shake",600);
+  		   
+  		    if (<%=@level%> == 1) { 
+  		  		setTimeout(function() {
+						$('#smileModal').modal('show')
+  					}, 1350);	
+  		  
+  		    }
+  		  
+  		  }
+  			
+		  if (currentButton == 2) {
+		  	
+		  		$("#star2").velocity("transition.bounceRightIn",700 );
   				$("#star2").velocity("callout.shake",600);
-  			});
-  			
-  			$("#staranime3").click(function(){
-   		 
-   		  	$("#star3").velocity("transition.bounceRightIn",700 );
-  				$("#star3").velocity("callout.shake",600);
+		  	
+		  	
+		  	  if (<%=@level%> == 2) { 
+  		  		setTimeout(function() {
+						$('#smileModal').modal('show')
+  					}, 1350);	
+  		  
+  		    }
+		  	
+		  	
+		  	}		
   				
-  			
-  			});
-			 
-			});
+  		
+  		if (currentButton == 3) {
+		  	
+		  		$("#star3").velocity("transition.bounceRightIn",700 );
+  				$("#star3").velocity("callout.shake",600);
+		  	
+		  	  if (<%=@level%> == 3) { 
+  		  		setTimeout(function() {
+						$('#smileModal').modal('show')
+  					}, 1350);	
+  		    
+  		    }
+		  	
+		  	
+		  	}		
+  		});			
+  	
+   
+     	$("#next").click(function(){
+     		
+     		$('#smiley').callout.pulse()
+     		
+     	});  
+   
+   
+   
+
+});
 		</script>
 
 		

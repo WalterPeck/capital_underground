@@ -1,38 +1,21 @@
-<% provide(:title, 'Help') %>
+<% provide(:title, 'First') %>
 
-<%letter = 'Y'%>	
-<%letter_trigger1= false%>
-<%letter_trigger2= false%>
+<%letter = alphabet%>	
+<%@lt1= false%>
+<%@lt2= false%>
+<%@level= 2%>
 
 
 
-<%btn_1 = letter%>
+
+<%btn_1= letter%>	
 <%btn_2 = letter%>	
-<%btn_3 = letter%>	
+<%btn_3 = new_letter(letter)%>	
 <%btn_4 = new_letter(letter)%>	
-<%btn_5 = new_letter(letter)%>	
+<%btn_5 = new_letter(letter)%>
 <%btn_6 = new_letter(letter)%>
-<%btn_7 = new_letter(letter)%>
-<%btn_8 = new_letter(letter)%>
-<%btn_9 = new_letter(letter)%>
 
-
-<%button_array = [btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9].shuffle%>
-
-<script>
-function lightitup() {
-    var x = document.getElementById("muteletters");
-    x.style.fontsize = "2.8em";           
-    x.style.color = "white"; 
-		x.style.textShadow = "rgb(255, 255, 255) 0px 0px 17px"
-	
-}
-</script> 
-
-
-
-
-
+<%button_array = [btn_1, btn_2, btn_3, btn_4, btn_5, btn_6].shuffle%>
 
 <div class='row' style="height:58px"> <!--this prevents from the rows getting shifted down the page when the star appears-->
 
@@ -52,124 +35,53 @@ function lightitup() {
 
 <div class='row edu'>	
 	<div class='col-xs-12 center' style="margin-top:0px">	
-		<h1>Where is Y ?</h1>
+		<h1>Where is <%=letter%> ?</h1>
 
 
 		<%if button_array[0] == letter%> <!--I dont need the exta script here-->
-			<%letter_trigger1 = true%>
-
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[0]%></button>
-
-		<%else%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[0]%></button>
+		
+		<%else%> 
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[0]%>><%=button_array[0]%></button>
-		<%end%>
+		<%end%> 
 
-		<%if button_array[1] == letter and letter_trigger1 != true %>
-			<%letter_trigger1 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[1]%></button>
-		<%elsif button_array[1] == letter and letter_trigger1 == true%>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[1]%></button>
-		<%else%>
+		<%if button_array[1] == letter %>
+			
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[1]%></button>
+	  <%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[1]%>><%=button_array[1]%></button>
 		<%end%>
 
-		<%if button_array[2] == letter and letter_trigger1 != true%>
-			<%letter_trigger1 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button" ><%=button_array[2]%></button>
-		<%elsif button_array[2] == letter and letter_trigger1 == true and letter_trigger2 != true %>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[2]%></button>
-		<%elsif button_array[2] == letter and letter_trigger1 == true and letter_trigger2 == true %>
+		<%if button_array[2] == letter%>
 			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime3" data-toggle="button"><%=button_array[2]%></button>
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button" ><%=button_array[2]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[2]%>><%=button_array[2]%></button>
 		<%end%>
 
-		<%if button_array[3] == letter and letter_trigger1 != true%>
-			<%letter_trigger1 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[3]%></button>
-		<%elsif button_array[3] == letter and letter_trigger1 == true and letter_trigger2 != true%>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[3]%></button>
-		<%elsif button_array[3] == letter and letter_trigger1 == true and letter_trigger2 == true %>
-			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime3" data-toggle="button"><%=button_array[3]%></button>
+		<%if button_array[3] == letter%>
+				
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[3]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[3]%>><%=button_array[3]%></button>
 		<%end%>
 
-		<%if button_array[4] == letter and letter_trigger1 != true%>
-			<%letter_trigger1 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[4]%></button>
-		<%elsif button_array[4] == letter and letter_trigger1 == true and letter_trigger2 != true%>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[4]%></button>
-		<%elsif button_array[4] == letter and letter_trigger1 == true and letter_trigger2 == true %>
+		<%if button_array[4] == letter%>
 			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime3" data-toggle="button"><%=button_array[4]%></button>
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[4]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[4]%>><%=button_array[4]%></button>
 		<%end%>
 
-		<%if button_array[5] == letter and letter_trigger1 != true%>
-			<%letter_trigger1 = true%>	
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[5]%></button>
-		<%elsif button_array[5] == letter and letter_trigger1 == true and letter_trigger2 != true%>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[5]%></button>
-		<%elsif button_array[5] == letter and letter_trigger1 == true and letter_trigger2 == true %>
-			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime3" data-toggle="button"><%=button_array[5]%></button>
+		<%if button_array[5] == letter%>
+	
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[5]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[5]%>><%=button_array[5]%></button>
 		<%end%>
 		
 		
-		
-		<%if button_array[6] == letter and letter_trigger1 != true%>
-			<%letter_trigger1 = true%>	
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[6]%></button>
-		<%elsif button_array[6] == letter and letter_trigger1 == true and letter_trigger2 != true%>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[6]%></button>
-		<%elsif button_array[6] == letter and letter_trigger1 == true and letter_trigger2 == true %>
-			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime3" data-toggle="button"><%=button_array[6]%></button>
-		<%else%>
-			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[6]%>><%=button_array[6]%></button>
-		<%end%>
-		
-		<%if button_array[7] == letter and letter_trigger1 != true%>
-			<%letter_trigger1 = true%>	
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[7]%></button>
-		<%elsif button_array[7] == letter and letter_trigger1 == true and letter_trigger2 != true%>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[7]%></button>
-		<%elsif button_array[7] == letter and letter_trigger1 == true and letter_trigger2 == true %>
-			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime3" data-toggle="button"><%=button_array[7]%></button>
-		<%else%>
-			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[7]%>><%=button_array[7]%></button>
-		<%end%>
-		
-		<%if button_array[8] == letter and letter_trigger1 != true%>
-			<%letter_trigger1 = true%>	
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime" data-toggle="button"><%=button_array[8]%></button>
-		<%elsif button_array[8] == letter and letter_trigger1 == true and letter_trigger2 != true%>
-			<%letter_trigger2 = true%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime2" data-toggle="button"><%=button_array[8]%></button>
-		<%elsif button_array[8] == letter and letter_trigger1 == true and letter_trigger2 == true %>
-			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="staranime3" data-toggle="button"><%=button_array[8]%></button>
-		<%else%>
-			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[8]%>><%=button_array[8]%></button>
-		<%end%>
-		
-
-
-</div>
-
-
+	</div>
+	
+ 
 </div>

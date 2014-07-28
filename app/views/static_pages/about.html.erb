@@ -3,6 +3,7 @@
 <%letter = alphabet%>	
 <%@lt1= false%>
 <%@lt2= false%>
+<%@level = 3%>
 
 
 
@@ -56,43 +57,43 @@ function lightitup() {
 
 
 		<%if button_array[0] == letter%> <!--I dont need the exta script here-->
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[0]%></button>
-			 
-		<%else%>
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[0]%></button>
+		
+		<%else%> 
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[0]%>><%=button_array[0]%></button>
 		<%end%> 
 
 		<%if button_array[1] == letter %>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[1]%></button>
-	  	
+			
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[1]%></button>
 	  <%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[1]%>><%=button_array[1]%></button>
 		<%end%>
 
 		<%if button_array[2] == letter%>
 			
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button" ><%=button_array[2]%></button>
-	
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button" ><%=button_array[2]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[2]%>><%=button_array[2]%></button>
 		<%end%>
 
 		<%if button_array[3] == letter%>
-		
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[3]%></button>
-	
+				
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[3]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[3]%>><%=button_array[3]%></button>
 		<%end%>
 
 		<%if button_array[4] == letter%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[4]%></button>
+			
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[4]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[4]%>><%=button_array[4]%></button>
 		<%end%>
 
 		<%if button_array[5] == letter%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[5]%></button>
+	
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[5]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[5]%>><%=button_array[5]%></button>
 		<%end%>
@@ -100,19 +101,22 @@ function lightitup() {
 		
 
 		<%if button_array[6] == letter%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[6]%></button>
+	
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[6]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[6]%>><%=button_array[6]%></button>
 		<%end%>
 		
 		<%if button_array[7] == letter%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[7]%></button>
+
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[7]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[7]%>><%=button_array[7]%></button>
 		<%end%>
 		
 		<%if button_array[8] == letter%>
-			<button type="button" class="btn btn-letter btn-circle btn-xl" id="<%=star_id(@lt1,@lt2)%>" data-toggle="button"><%=button_array[8]%></button>
+
+			<button type="button" class="btn btn-letter btn-circle btn-xl correct" data-toggle="button"><%=button_array[8]%></button>
 		<%else%>
 			<button type="button" class="btn btn-letter butt btn-circle btn-xl" data-loading-text=<%=button_array[8]%>><%=button_array[8]%></button>
 		<%end%>
